@@ -70,7 +70,7 @@ body {
 /* --- Sezione Hero (Visuale iniziale) --- */
 .hero {
     height: 100vh;
-    background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80'); /* Immagine temporanea lago/montagna */
+    background-image: url('../img/Monasterolo.jpg'); 
     background-size: cover;
     background-position: center;
     position: relative;
