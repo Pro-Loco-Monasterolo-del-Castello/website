@@ -1,0 +1,26 @@
+[
+    {
+        "id": "Mercatino",
+        "title": "Mercatino di Via Loj",
+        "short_desc": "Un viaggio tra tradizione, sapori e artigianato nel cuore di Monasterolo del Castello, dove ogni estate il borgo si anima di vita, colori e solidarietà.",
+        "full_desc": "Nel suggestivo centro storico di Monasterolo del Castello, affacciato sulle acque del Lago di Endine, prende vita ogni 14 agosto il tradizionale Mercatino di Via Loj.\n\nNato nel 1988 dall’impegno delle associazioni locali, questo evento è cresciuto negli anni fino a trasformarsi in una vera e propria festa di comunità, capace di richiamare migliaia di visitatori. Le vie del borgo si riempiono di espositori tra artigiani, hobbisti e produttori locali, offrendo un ricco percorso tra creazioni artistiche, oggetti fatti a mano e specialità gastronomiche.\n\nPasseggiando lungo Via Loj e tra i vicoli circostanti, i visitatori possono scoprire antiche tecniche artigianali, assaporare ricette della tradizione e vivere un’atmosfera autentica, fatta di profumi, musica e convivialità.\n\nParte integrante della rassegna estiva, il mercatino rappresenta anche un momento di valorizzazione del territorio e delle sue tradizioni.\n\nIl Mercatino di Via Loj non è solo un mercato, ma un’occasione per vivere il borgo e riscoprire il valore delle tradizioni locali in un’atmosfera calda e coinvolgente.",
+        "date": "14 Agosto 2026",
+        "time": "Dalle 12:00",
+        "location": "Vie del Paese, Monasterolo del Castello",
+        "price": "Ingresso libero, consumazioni a pagamento",
+        "image": "assets/img/Mercatino.jpg",
+        "booking_link": ""
+    },
+    {
+        "id": "visita-guidata-castello",
+        "title": "Visita Guidata al Castello",
+        "short_desc": "Scopri i segreti e la storia dell'antico Castello di Monasterolo con una guida esperta.",
+        "full_desc": "Un'occasione unica per immergersi nella storia di Monasterolo del Castello. Le nostre guide turistiche abilitate vi accompagneranno in un viaggio nel tempo attraverso le stanze e i cortili del pittoresco Castello.\nScoprirete leggende, aneddoti e la storia delle nobili famiglie che lo hanno abitato. Al termine della visita sarà offerto un piccolo aperitivo nel giardino interno.",
+        "date": "26 Luglio 2026",
+        "time": "Ore 10:30 e 11:30",
+        "location": "Castello di Monasterolo, Piazzetta Contessa V. Terni de Gregori, 1",
+        "price": "€ 4,00 a persona",
+        "image": "assets/img/Castello.jpeg",
+        "booking_link": "https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T"
+    }
+]
