@@ -5,7 +5,7 @@
         "short_desc": "Un viaggio tra tradizione, sapori e artigianato nel cuore di Monasterolo del Castello, dove ogni estate il borgo si anima di vita, colori e solidarietà.",
         "full_desc": "Nel suggestivo centro storico di Monasterolo del Castello, affacciato sulle acque del Lago di Endine, prende vita ogni 14 agosto il tradizionale Mercatino di Via Loj.\n\nNato nel 1988 dall’impegno delle associazioni locali, questo evento è cresciuto negli anni fino a trasformarsi in una vera e propria festa di comunità, capace di richiamare migliaia di visitatori. Le vie del borgo si riempiono di espositori tra artigiani, hobbisti e produttori locali, offrendo un ricco percorso tra creazioni artistiche, oggetti fatti a mano e specialità gastronomiche.\n\nPasseggiando lungo Via Loj e tra i vicoli circostanti, i visitatori possono scoprire antiche tecniche artigianali, assaporare ricette della tradizione e vivere un’atmosfera autentica, fatta di profumi, musica e convivialità.\n\nParte integrante della rassegna estiva, il mercatino rappresenta anche un momento di valorizzazione del territorio e delle sue tradizioni.\n\nIl Mercatino di Via Loj non è solo un mercato, ma un’occasione per vivere il borgo e riscoprire il valore delle tradizioni locali in un’atmosfera calda e coinvolgente.",
         "date": "14 Agosto 2026",
-        "time": "Dalle 12:00",
+        "time": "Dalle 12:00 alle 24:00",
         "location": "Vie del Paese, Monasterolo del Castello",
         "price": "Ingresso libero, consumazioni a pagamento",
         "image": "assets/img/Mercatino.jpg",
@@ -22,5 +22,17 @@
         "price": "€ 4,00 a persona",
         "image": "assets/img/Castello.jpeg",
         "booking_link": "https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T"
+    },
+    {
+        "id": "piazza-dance",
+        "title": "Piazza Dance",
+        "short_desc": "Musica, divertimento e sfiziosità",
+        "full_desc": "Una discoteca a cielo aperto, ad ingresso libero, per tutte le età! Un evento che fa vibrare i cuori di tutta la valle, tra balli, intrattenimento, temi speciali e sfiziose degustazioni",
+        "date": "23 Maggio 2026 | 20 Giugno 2026 | 23 Maggio 2026 | 20 Giugno 2026",
+        "time": "Ore 19:00 e 23:30",
+        "location": "Piazza IV Novembre, Monasterolo del Castello",
+        "price": "Ingresso libero, consumazioni a pagamento",
+        "image": "assets/img/Cannoni.jpg",
+        "booking_link": ""
     }
 ]
