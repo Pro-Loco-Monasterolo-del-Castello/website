@@ -8,7 +8,13 @@
         "time": "Dalle 12:00",
         "location": "Vie del Paese, Monasterolo del Castello",
         "price": "Ingresso libero, consumazioni a pagamento",
+        "website": "https://www.vialoj.it/",
         "image": "assets/img/Mercatino.jpg",
+        "gallery": [
+            "assets/img/Mercatino.jpg",
+            "https://images.unsplash.com/photo-1544025162-81111420d4d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        ],
         "booking_link": ""
     },
     {
@@ -20,7 +26,13 @@
         "time": "Ore 10:30 e 11:30",
         "location": "Castello di Monasterolo, Piazzetta Contessa V. Terni de Gregori, 1",
         "price": "€ 4,00 a persona",
+        "website": "",
         "image": "assets/img/Castello.jpeg",
+        "gallery": [
+            "assets/img/Castello.jpeg",
+            "https://images.unsplash.com/photo-1599388851493-9c8e826e108e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1582540608553-61de83f6aa6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        ],
         "booking_link": "https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T"
     }
 ]
