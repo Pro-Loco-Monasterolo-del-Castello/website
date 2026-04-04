@@ -45,9 +45,36 @@ body {
     padding: 10px 0;
 }
 
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .logo img {
     height: 60px; /* Regola questa altezza in base al tuo logo */
     width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.giovani-link {
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 15px;
+    border-left: 2px solid #ccc;
+    transition: color 0.3s ease, border-left-color 0.3s ease;
+}
+
+.giovani-link:hover {
+    color: var(--dark-blue);
+    border-left-color: var(--dark-blue);
 }
 
 .nav-links {
