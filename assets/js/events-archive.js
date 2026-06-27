@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="event-date"><i class="fa-regular fa-calendar"></i> ${event.date}</div>
                                 <h3 style="color: var(--primary-blue); font-size: 1.4rem;">${event.title}</h3>
                                 <p style="font-size:1rem;">${event.short_desc}</p>
-                                <a href="evento.html?id=${event.id}" class="btn-outline">Scopri di più</a>
+                                <a href="${event.custom_link || 'evento.html?id=' + event.id}" class="btn-outline">Scopri di più</a>
                             </div>
                         `;
                         grid.appendChild(card);

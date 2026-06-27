@@ -13,13 +13,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (href.startsWith('#')) {
             e.preventDefault(); // Annulliamo il salto di sistema brusco predefinito
 
-            // Troviamo sulla pagina l'elemento a cui puntiamo
-            const target = document.querySelector(href);
-            if (target) {
-                // Diamo istruzione al browser di scorrere dolcemente fino alla posizione del target
-                target.scrollIntoView({
+            if (href === '#') {
+                // Se l'ancora è solo '#', scorriamo dolcemente a inizio pagina
+                window.scrollTo({
+                    top: 0,
                     behavior: 'smooth'
                 });
+            } else {
+                // Troviamo sulla pagina l'elemento a cui puntiamo
+                const target = document.querySelector(href);
+                if (target) {
+                    // Diamo istruzione al browser di scorrere dolcemente fino alla posizione del target
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             }
         }
     });
@@ -81,8 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="event-date"><i class="fa-regular fa-calendar"></i> ${event.date}</div>
                             <h3>${event.title}</h3>
                             <p>${event.short_desc}</p>
-                            <!-- Bottone con query string. Tramite '?id=xxxxx' passiamo al file evento.html un indicatore che gli farà sapere chi mostrare! -->
-                            <a href="evento.html?id=${event.id}" class="btn-outline">Scopri di più</a>
+                            <!-- Bottone con query string. Se c'è un custom_link, usiamo quello, altrimenti il link di dettaglio standard! -->
+                            <a href="${event.custom_link || 'evento.html?id=' + event.id}" class="btn-outline">Scopri di più</a>
                         </div>
                     `;
                     // Infine accodiamo il blocco generato nel container padrone visibile sul sito
