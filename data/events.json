@@ -16,7 +16,7 @@
             "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         ],
         "booking_link": "",
-        "featured": true,
+        "featured": false,
         "associations": ["Proloco"]
     },
     {
@@ -36,23 +36,8 @@
             "https://images.unsplash.com/photo-1582540608553-61de83f6aa6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         ],
         "booking_link": "https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T",
-        "featured": true,
+        "featured": false,
         "associations": ["Proloco"]
-    },
-    {
-        "id": "piazza-dance",
-        "title": "Piazza Dance",
-        "short_desc": "Musica, divertimento e sfiziosità",
-        "full_desc": "Una discoteca a cielo aperto, ad ingresso libero, per tutte le età! Un evento che fa vibrare i cuori di tutta la valle, tra balli, intrattenimento, temi speciali e sfiziose degustazioni",
-        "date": "25 Luglio 2026 | 15 Agosto 2026",
-        "time": "Ore 19:00 e 23:30",
-        "location": "Piazza IV Novembre, Monasterolo del Castello",
-        "price": "Ingresso libero, consumazioni a pagamento",
-        "image": "assets/img/Cannoni.jpg",
-        "booking_link": "",
-        "featured": true,
-        "associations": ["GVM"]
-
     },
     {
     "id": "sagra-del-castoncello",
@@ -82,7 +67,7 @@
         "location": "Ristorante Bolen, Monasterolo del Castello",
         "price": "Menu Evento: € 35 | Menu Baby: € 20",
         "website": "",
-        "image": "assets/img/cena-perfetta.jpeg",
+        "image": "assets/img/cinema/CinemaXed.jpeg",
         "gallery": [],
         "booking_link": "https://www.linklinklink.it",
         "featured": true,
@@ -99,7 +84,7 @@
         "location": "Castello di Monasterolo",
         "price": "Ingresso libero",
         "website": "",
-        "image": "assets/img/bella-bestia.jpeg",
+        "image": "assets/img/cinema/CinemaXed.jpeg",
         "gallery": [],
         "booking_link": "",
         "featured": true,
@@ -116,12 +101,27 @@
         "location": "Parco Biali, Riva Lago",
         "price": "Ingresso libero",
         "website": "",
-        "image": "assets/img/lo-squalo.jpeg",
+        "image": "assets/img/cinema/CinemaXed.jpeg",
         "gallery": [],
         "booking_link": "",
         "featured": true,
         "associations": ["GVM"],
         "custom_link": "cinema-decima-edizione.html#lo-squalo"
+    },
+        {
+        "id": "piazza-dance",
+        "title": "Piazza Dance",
+        "short_desc": "Musica, divertimento e sfiziosità",
+        "full_desc": "Una discoteca a cielo aperto, ad ingresso libero, per tutte le età! Un evento che fa vibrare i cuori di tutta la valle, tra balli, intrattenimento, temi speciali e sfiziose degustazioni",
+        "date": "25 Luglio 2026 | 15 Agosto 2026",
+        "time": "Ore 19:00 e 23:30",
+        "location": "Piazza IV Novembre, Monasterolo del Castello",
+        "price": "Ingresso libero, consumazioni a pagamento",
+        "image": "assets/img/Cannoni.jpg",
+        "booking_link": "",
+        "featured": false,
+        "associations": ["GVM"]
+
     },
     {
         "id": "follie-imperatore",
@@ -133,7 +133,7 @@
         "location": "Piazza IV Novembre",
         "price": "Ingresso libero",
         "website": "",
-        "image": "assets/img/follie-imperatore.jpeg",
+        "image": "assets/img/cinema/CinemaXed.jpeg",
         "gallery": [],
         "booking_link": "",
         "featured": true,

@@ -274,11 +274,34 @@
             margin-bottom: 25px;
         }
 
+        .movie-title-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .movie-year-tag {
+            background-color: rgba(229, 193, 88, 0.12);
+            color: var(--cinema-gold);
+            border: 1px solid rgba(229, 193, 88, 0.35);
+            padding: 4px 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            height: fit-content;
+        }
+
         .movie-header-block h2 {
             font-family: var(--font-display);
             font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 800;
-            margin-bottom: 5px;
+            margin-bottom: 0;
             color: #ffffff;
         }
 
@@ -602,7 +625,7 @@
             <h1>CINEMA ALL'APERTO - SPECIALE DECIMA EDIZIONE</h1>
             <p class="subtitle">Monasterolo del Castello. 4 date speciali in contesti immersivi.</p>
             <p class="cinema-intro-text">
-                Portati la sedia, il coraggio o l'appetito: a tutto il resto pensiamo noi dei Giovani Volontari!
+                Portati un amico, il coraggio e l'appetito: a tutto il resto pensiamo noi dei Giovani Volontari!
             </p>
         </div>
     </section>
@@ -611,7 +634,7 @@
     <nav class="cinema-nav-bar" id="cinema-subnav">
         <div class="cinema-nav-container">
             <a href="#cena-perfetta" class="cinema-nav-link"><i class="fa-solid fa-utensils"></i> 9 Luglio</a>
-            <a href="#bella-bestia" class="cinema-nav-link"><i class="fa-solid fa-castle"></i> 16 Luglio</a>
+            <a href="#bella-bestia" class="cinema-nav-link"><i class="fa-brands fa-fort-awesome"></i> 16 Luglio</a>
             <a href="#lo-squalo" class="cinema-nav-link"><i class="fa-solid fa-fish"></i> 23 Luglio</a>
             <a href="#follie-imperatore" class="cinema-nav-link"><i class="fa-solid fa-crown"></i> 30 Luglio</a>
         </div>
@@ -624,12 +647,15 @@
                 <div class="movie-poster-column">
                     <div class="poster-wrapper">
                         <span class="movie-badge-top">9 LUG - 20:45</span>
-                        <img src="assets/img/cena-perfetta.jpeg" alt="La Cena Perfetta" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
+                        <img src="assets/img/cinema/LaCenaPerfetta.jpeg" alt="La Cena Perfetta" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
                     </div>
                 </div>
                 <div class="movie-info-column">
                     <div class="movie-header-block">
-                        <h2>La Cena Perfetta</h2>
+                        <div class="movie-title-row">
+                            <h2>La Cena Perfetta</h2>
+                            <span class="movie-year-tag">2022</span>
+                        </div>
                         <div class="movie-subtitle">Speciale "Cena da Film"</div>
                     </div>
                     
@@ -645,6 +671,8 @@
                     <!-- Technical Details -->
                     <div class="tech-details">
                         <span class="tech-item"><i class="fa-regular fa-calendar"></i> 9 Luglio 2026, ore 20:45</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-clapperboard"></i> 2022</span>
                         <span class="tech-item separator">|</span>
                         <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Ristorante Bolen</span>
                         <span class="tech-item separator">|</span>
@@ -677,18 +705,18 @@
                             </div>
                             <div class="menu-item" style="grid-column: 1 / -1;">
                                 <span class="menu-item-course">Bevande</span>
-                                <span class="menu-item-name">Scelta tra acqua e caffè</span>
+                                <span class="menu-item-name">Bevanda a scelta, acqua e caffè inclusi</span>
                             </div>
                         </div>
                         
                         <div class="pricing-box">
                             <span class="price-badge"><i class="fa-solid fa-tag"></i> Prezzo Menu Evento: € 35</span>
-                            <span class="price-badge baby"><i class="fa-solid fa-child"></i> Prezzo Menu Baby: € 20 <small style="display:block; font-weight:normal; font-size:0.75rem; margin-top:2px;">(Primo, Dolce, Acqua/Bevanda)</small></span>
+                            <span class="price-badge baby"><i class="fa-solid fa-child"></i> Prezzo Menu Baby: € 20 <small style="display:block; font-weight:normal; font-size:0.75rem; margin-top:2px;">(Primo, Dolce, Bevanda, Acqua)</small></span>
                         </div>
                         
                         <div class="menu-note">
                             <i class="fa-solid fa-circle-info"></i>
-                            <span>Nota: Visione libera del film con servizio ristorante o bar alla carta.</span>
+                            <span>In alternativa: visione libera del film con servizio ristorante o bar alla carta.</span>
                         </div>
                     </div>
 
@@ -707,12 +735,15 @@
                 <div class="movie-poster-column">
                     <div class="poster-wrapper">
                         <span class="movie-badge-top">16 LUG - 21:00</span>
-                        <img src="assets/img/bella-bestia.jpeg" alt="La Bella e la Bestia" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
+                        <img src="assets/img/cinema/LaBellaELaBestia.jpeg" alt="La Bella e la Bestia" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
                     </div>
                 </div>
                 <div class="movie-info-column">
                     <div class="movie-header-block">
-                        <h2>La Bella e la Bestia</h2>
+                        <div class="movie-title-row">
+                            <h2>La Bella e la Bestia</h2>
+                            <span class="movie-year-tag">2017</span>
+                        </div>
                         <div class="movie-subtitle">Magia nel Castello</div>
                     </div>
                     
@@ -728,6 +759,8 @@
                     <!-- Technical Details -->
                     <div class="tech-details">
                         <span class="tech-item"><i class="fa-regular fa-calendar"></i> 16 Luglio 2026, ore 21:00</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-clapperboard"></i> 1991</span>
                         <span class="tech-item separator">|</span>
                         <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Castello di Monasterolo</span>
                         <span class="tech-item separator">|</span>
@@ -752,12 +785,15 @@
                 <div class="movie-poster-column">
                     <div class="poster-wrapper">
                         <span class="movie-badge-top">23 LUG - 21:00</span>
-                        <img src="assets/img/lo-squalo.jpeg" alt="Lo Squalo" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
+                        <img src="assets/img/cinema/LoSqualo.jpeg" alt="Lo Squalo" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
                     </div>
                 </div>
                 <div class="movie-info-column">
                     <div class="movie-header-block">
-                        <h2>Lo Squalo</h2>
+                        <div class="movie-title-row">
+                            <h2>Lo Squalo</h2>
+                            <span class="movie-year-tag">1975</span>
+                        </div>
                         <div class="movie-subtitle">Brividi in Riva al Lago</div>
                     </div>
                     
@@ -773,6 +809,8 @@
                     <!-- Technical Details -->
                     <div class="tech-details">
                         <span class="tech-item"><i class="fa-regular fa-calendar"></i> 23 Luglio 2026, ore 21:00</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-clapperboard"></i> 1975</span>
                         <span class="tech-item separator">|</span>
                         <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Parco Biali, Riva Lago</span>
                         <span class="tech-item separator">|</span>
@@ -797,12 +835,15 @@
                 <div class="movie-poster-column">
                     <div class="poster-wrapper">
                         <span class="movie-badge-top">30 LUG - 21:00</span>
-                        <img src="assets/img/follie-imperatore.jpeg" alt="Le Follie dell'Imperatore" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
+                        <img src="assets/img/cinema/LeFollieDellImperatore.jpeg" alt="Le Follie dell'Imperatore" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
                     </div>
                 </div>
                 <div class="movie-info-column">
                     <div class="movie-header-block">
-                        <h2>Le Follie dell'Imperatore</h2>
+                        <div class="movie-title-row">
+                            <h2>Le Follie dell'Imperatore</h2>
+                            <span class="movie-year-tag">2000</span>
+                        </div>
                         <div class="movie-subtitle">Ritorno alle Origini</div>
                     </div>
                     
@@ -818,6 +859,8 @@
                     <!-- Technical Details -->
                     <div class="tech-details">
                         <span class="tech-item"><i class="fa-regular fa-calendar"></i> 30 Luglio 2026, ore 21:00</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-clapperboard"></i> 2000</span>
                         <span class="tech-item separator">|</span>
                         <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Piazza IV Novembre</span>
                         <span class="tech-item separator">|</span>
