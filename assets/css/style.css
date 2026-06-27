@@ -256,7 +256,7 @@ footer {
 
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
 }
 
@@ -325,6 +325,39 @@ footer {
     background-color: var(--primary-blue);
     color: var(--text-light);
 }
+
+/* --- Tag Badges --- */
+.event-image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.event-tags-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.tag-badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    display: inline-block;
+    background-color: #555; /* Default fallback */
+}
+
+/* Colori mappati per le singole associazioni */
+.tag-proloco { background-color: var(--primary-blue); }
+.tag-avis { background-color: #e53935; }
+.tag-gvm { background-color: #18cea6; }
+.tag-gruppo-castoncello { background-color: #f1c224e5; }
 
 /* --- Info Point Section --- */
 .info-section {

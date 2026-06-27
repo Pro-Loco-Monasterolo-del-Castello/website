@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema all'Aperto - Decima Edizione | Giovani Volontari Monasterolo</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Premium Google Fonts for Cinematic Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Tema Scuro Cinematografico e Variabili Locali --- */
+        :root {
+            --cinema-dark: #0a0a0c;
+            --cinema-card: #141418;
+            --cinema-gold: #e5c158;
+            --cinema-gold-glow: rgba(229, 193, 88, 0.4);
+            --cinema-red: #e50914;
+            --cinema-red-glow: rgba(229, 9, 20, 0.4);
+            --cinema-text-gray: #b3b3b7;
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        body.cinema-theme {
+            background-color: var(--cinema-dark);
+            color: #ffffff;
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Navbar Override --- */
+        .cinema-theme .navbar {
+            background-color: rgba(10, 10, 12, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .cinema-theme .navbar .logo-group .giovani-link {
+            color: var(--cinema-gold);
+            border-left-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .cinema-theme .navbar .logo-group .giovani-link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px var(--cinema-gold-glow);
+        }
+
+        .cinema-theme .nav-links a {
+            color: #ffffff;
+        }
+
+        .cinema-theme .nav-links a:hover {
+            color: var(--cinema-gold);
+            text-shadow: 0 0 8px var(--cinema-gold-glow);
+        }
+
+        /* --- Header Celebrativo --- */
+        .cinema-header {
+            position: relative;
+            padding: 160px 0 80px 0;
+            background: radial-gradient(circle at center, #1b1310 0%, var(--cinema-dark) 70%);
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .celebrative-badge {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--cinema-gold);
+            padding: 15px 25px;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 25px;
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 20px var(--cinema-gold-glow);
+            animation: pulse-gold 3s infinite;
+        }
+
+        .celebrative-badge .number {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--cinema-gold);
+            line-height: 1;
+        }
+
+        .celebrative-badge .text {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-top: 5px;
+        }
+
+        .cinema-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--cinema-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .cinema-header .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: var(--cinema-text-gray);
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        .cinema-intro-text {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #e2e2e7;
+            font-style: italic;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        /* --- Floating Navigation Mini-Menu --- */
+        .cinema-nav-bar {
+            position: sticky;
+            top: 80px;
+            z-index: 99;
+            background: rgba(10, 10, 12, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .cinema-nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 0 15px;
+        }
+
+        .cinema-nav-link {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cinema-nav-link:hover, .cinema-nav-link.active {
+            background: linear-gradient(135deg, var(--cinema-red) 0%, #b0060e 100%);
+            border-color: var(--cinema-red);
+            box-shadow: 0 4px 15px var(--cinema-red-glow);
+            transform: translateY(-2px);
+        }
+
+        /* --- Sezioni Eventi --- */
+        .cinema-section {
+            padding: 100px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cinema-section:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .movie-grid {
+                grid-template-columns: 400px 1fr;
+            }
+            .cinema-section:nth-child(even) .movie-grid {
+                grid-template-columns: 1fr 400px;
+            }
+            .cinema-section:nth-child(even) .movie-poster-column {
+                order: 2;
+            }
+        }
+
+        /* --- Poster Column --- */
+        .movie-poster-column {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .poster-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 340px;
+            aspect-ratio: 2/3;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .poster-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%);
+            z-index: 2;
+        }
+
+        .poster-wrapper:hover {
+            transform: scale(1.03) translateY(-10px);
+            box-shadow: 0 20px 40px rgba(229, 193, 88, 0.2);
+            border-color: var(--cinema-gold);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .poster-wrapper:hover .movie-poster {
+            transform: scale(1.05);
+        }
+
+        .movie-badge-top {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, var(--cinema-gold) 0%, #c49d32 100%);
+            color: #000000;
+            padding: 6px 14px;
+            font-weight: 700;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            z-index: 3;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Info Column --- */
+        .movie-info-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .movie-header-block {
+            margin-bottom: 25px;
+        }
+
+        .movie-header-block h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .movie-header-block .movie-subtitle {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--cinema-gold);
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .tagline-box {
+            border-left: 4px solid var(--cinema-red);
+            padding: 5px 0 5px 15px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            font-style: italic;
+            color: #f8f8fa;
+            margin-bottom: 25px;
+            background: rgba(229, 9, 20, 0.05);
+        }
+
+        .movie-desc {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--cinema-text-gray);
+            margin-bottom: 30px;
+        }
+
+        /* --- Technical Details Bar --- */
+        .tech-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: #ffffff;
+        }
+
+        .tech-item i {
+            color: var(--cinema-gold);
+            font-size: 1.1rem;
+        }
+
+        .tech-item.separator {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- Food Menu Grid (Special for Cena Perfetta) --- */
+        .menu-container {
+            margin-bottom: 35px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            border: 1px solid rgba(229, 193, 88, 0.15);
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cinema-gold) 0%, transparent 100%);
+        }
+
+        .menu-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--cinema-gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 576px) {
+            .menu-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-item-course {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--cinema-gold);
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .menu-item-name {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .pricing-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .price-badge {
+            background: rgba(229, 193, 88, 0.1);
+            border: 1px solid var(--cinema-gold);
+            color: var(--cinema-gold);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-badge.baby {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        .menu-note {
+            font-size: 0.85rem;
+            color: var(--cinema-text-gray);
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* --- Extra / Service Bar badge --- */
+        .extra-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(229, 9, 20, 0.1);
+            border: 1px solid rgba(229, 9, 20, 0.3);
+            color: #ffffff;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            align-self: flex-start;
+        }
+
+        .extra-box i {
+            color: var(--cinema-red);
+            font-size: 1.1rem;
+        }
+
+        /* --- CTAs --- */
+        .cinema-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--cinema-red) 0%, #b0060e 100%);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 6px 20px var(--cinema-red-glow);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+
+        .cinema-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px var(--cinema-red-glow);
+            filter: brightness(1.1);
+        }
+
+        /* --- Floating Actions & Back to Top --- */
+        .floating-actions {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .btn-floating {
+            width: 50px;
+            height: 50px;
+            background-color: #1a1a1e;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-floating:hover {
+            background-color: var(--cinema-gold);
+            color: #000000;
+            border-color: var(--cinema-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px var(--cinema-gold-glow);
+        }
+
+        /* --- Animations --- */
+        @keyframes pulse-gold {
+            0% {
+                box-shadow: 0 0 0 0 rgba(229, 193, 88, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(229, 193, 88, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(229, 193, 88, 0);
+            }
+        }
+
+        /* --- Footer Override for Dark Theme --- */
+        .cinema-theme footer {
+            background-color: #050507;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--cinema-text-gray);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .cinema-header {
+                padding: 130px 0 60px 0;
+            }
+            .cinema-nav-bar {
+                top: 80px;
+            }
+            .tech-details {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .tech-item.separator {
+                display: none;
+            }
+            .cinema-section {
+                padding: 60px 0;
+            }
+            .floating-actions {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="cinema-theme">
+
+    <!-- HEADER/NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo-group">
+                <a href="index.html" class="logo">
+                    <img src="assets/img/logo-proloco.png" alt="Logo Proloco Monasterolo del Castello">
+                </a>
+                <a href="giovani-volontari.html" class="giovani-link">Giovani Volontari</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#scopri">Il Borgo</a></li>
+                    <li><a href="tutti-eventi.html">Eventi</a></li>
+                    <li><a href="index.html#info-point">Info Point</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CELEBRATIVE HEADER -->
+    <section class="cinema-header">
+        <div class="container">
+            <div class="celebrative-badge">
+                <span class="number">X</span>
+                <span class="text">Edizione</span>
+            </div>
+            <h1>CINEMA ALL'APERTO - SPECIALE DECIMA EDIZIONE</h1>
+            <p class="subtitle">Monasterolo del Castello. 4 date speciali in contesti immersivi.</p>
+            <p class="cinema-intro-text">
+                Portati la sedia, il coraggio o l'appetito: a tutto il resto pensiamo noi dei Giovani Volontari!
+            </p>
+        </div>
+    </section>
+
+    <!-- STICKY MINI-MENU FOR NAVIGATION -->
+    <nav class="cinema-nav-bar" id="cinema-subnav">
+        <div class="cinema-nav-container">
+            <a href="#cena-perfetta" class="cinema-nav-link"><i class="fa-solid fa-utensils"></i> 9 Luglio</a>
+            <a href="#bella-bestia" class="cinema-nav-link"><i class="fa-solid fa-castle"></i> 16 Luglio</a>
+            <a href="#lo-squalo" class="cinema-nav-link"><i class="fa-solid fa-fish"></i> 23 Luglio</a>
+            <a href="#follie-imperatore" class="cinema-nav-link"><i class="fa-solid fa-crown"></i> 30 Luglio</a>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: LA CENA PERFETTA -->
+    <section id="cena-perfetta" class="cinema-section">
+        <div class="container">
+            <div class="movie-grid">
+                <div class="movie-poster-column">
+                    <div class="poster-wrapper">
+                        <span class="movie-badge-top">9 LUG - 20:45</span>
+                        <img src="assets/img/cena-perfetta.jpeg" alt="La Cena Perfetta" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
+                    </div>
+                </div>
+                <div class="movie-info-column">
+                    <div class="movie-header-block">
+                        <h2>La Cena Perfetta</h2>
+                        <div class="movie-subtitle">Speciale "Cena da Film"</div>
+                    </div>
+                    
+                    <div class="tagline-box">
+                        Vietato leccare lo schermo! I piatti ve li portiamo noi.
+                    </div>
+
+                    <p class="movie-desc">
+                        Un malavitoso dal cuore d'oro, una chef esplosiva e un ristorante che punta alla stella Michelin. 
+                        Per la 10ª edizione, vi regaliamo un'esperienza sensoriale: i piatti principali che vedrete sullo schermo vi verranno serviti dal vivo in contemporanea! Altro che pop-corn, preparatevi a una vera serata "stellata".
+                    </p>
+
+                    <!-- Technical Details -->
+                    <div class="tech-details">
+                        <span class="tech-item"><i class="fa-regular fa-calendar"></i> 9 Luglio 2026, ore 20:45</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Ristorante Bolen</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-film"></i> Commedia Romantica</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-regular fa-clock"></i> 106 Min.</span>
+                    </div>
+
+                    <!-- Food Menu -->
+                    <div class="menu-container">
+                        <div class="menu-title">
+                            <i class="fa-solid fa-square-poll-horizontal"></i> Menu della Serata (Servito in sincrono)
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-item">
+                                <span class="menu-item-course">Antipasto</span>
+                                <span class="menu-item-name">Pizza, pane e salsiccia</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="menu-item-course">Primo</span>
+                                <span class="menu-item-name">Pasta provola e patate</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="menu-item-course">Secondo</span>
+                                <span class="menu-item-name">Empanadas</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="menu-item-course">Dolce</span>
+                                <span class="menu-item-name">Pastiera napoletana</span>
+                            </div>
+                            <div class="menu-item" style="grid-column: 1 / -1;">
+                                <span class="menu-item-course">Bevande</span>
+                                <span class="menu-item-name">Scelta tra acqua e caffè</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pricing-box">
+                            <span class="price-badge"><i class="fa-solid fa-tag"></i> Prezzo Menu Evento: € 35</span>
+                            <span class="price-badge baby"><i class="fa-solid fa-child"></i> Prezzo Menu Baby: € 20 <small style="display:block; font-weight:normal; font-size:0.75rem; margin-top:2px;">(Primo, Dolce, Acqua/Bevanda)</small></span>
+                        </div>
+                        
+                        <div class="menu-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>Nota: Visione libera del film con servizio ristorante o bar alla carta.</span>
+                        </div>
+                    </div>
+
+                    <a href="https://www.linklinklink.it" target="_blank" rel="noopener noreferrer" class="cinema-btn">
+                        <i class="fa-solid fa-ticket"></i> Prenota il tuo tavolo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: LA BELLA E LA BESTIA -->
+    <section id="bella-bestia" class="cinema-section">
+        <div class="container">
+            <div class="movie-grid">
+                <div class="movie-poster-column">
+                    <div class="poster-wrapper">
+                        <span class="movie-badge-top">16 LUG - 21:00</span>
+                        <img src="assets/img/bella-bestia.jpeg" alt="La Bella e la Bestia" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
+                    </div>
+                </div>
+                <div class="movie-info-column">
+                    <div class="movie-header-block">
+                        <h2>La Bella e la Bestia</h2>
+                        <div class="movie-subtitle">Magia nel Castello</div>
+                    </div>
+                    
+                    <div class="tagline-box">
+                        Bestia! Che bella location... Il Castello di Monasterolo!
+                    </div>
+
+                    <p class="movie-desc">
+                        Stia con noi! Una ragazza brillante, un principe scontroso e un maniero dove i candelabri cantano e le teiere parlano. 
+                        Per questa speciale 10ª edizione, la magia prende vita... direttamente nel cortile del Castello di Monasterolo! Lasciate a casa i forconi e venite a vivere una fiaba sotto le stelle, in una vera location da favola.
+                    </p>
+
+                    <!-- Technical Details -->
+                    <div class="tech-details">
+                        <span class="tech-item"><i class="fa-regular fa-calendar"></i> 16 Luglio 2026, ore 21:00</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Castello di Monasterolo</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-film"></i> Fantasy / Musical</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-regular fa-clock"></i> 123 Min.</span>
+                    </div>
+
+                    <!-- Extras -->
+                    <div class="extra-box">
+                        <i class="fa-solid fa-mug-hot"></i> Servizio Bar Attivo
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: LO SQUALO -->
+    <section id="lo-squalo" class="cinema-section">
+        <div class="container">
+            <div class="movie-grid">
+                <div class="movie-poster-column">
+                    <div class="poster-wrapper">
+                        <span class="movie-badge-top">23 LUG - 21:00</span>
+                        <img src="assets/img/lo-squalo.jpeg" alt="Lo Squalo" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
+                    </div>
+                </div>
+                <div class="movie-info-column">
+                    <div class="movie-header-block">
+                        <h2>Lo Squalo</h2>
+                        <div class="movie-subtitle">Brividi in Riva al Lago</div>
+                    </div>
+                    
+                    <div class="tagline-box">
+                        Quale miglior film da vedere in riva al lago di Endine?
+                    </div>
+
+                    <p class="movie-desc">
+                        Ci serve una barca più grande! Un enorme squalo bianco, tre cacciatori improvvisati e la colonna sonora più nota della storia del cinema. 
+                        Per questa 10ª edizione vi facciamo venire i brividi: proietteremo questo capolavoro della suspense... proprio in riva al lago di Endine! Portate il coraggio e non avvicinatevi troppo all'acqua!
+                    </p>
+
+                    <!-- Technical Details -->
+                    <div class="tech-details">
+                        <span class="tech-item"><i class="fa-regular fa-calendar"></i> 23 Luglio 2026, ore 21:00</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Parco Biali, Riva Lago</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-film"></i> Thriller / Suspense</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-regular fa-clock"></i> 125 Min.</span>
+                    </div>
+
+                    <!-- Extras -->
+                    <div class="extra-box">
+                        <i class="fa-solid fa-mug-hot"></i> Servizio Bar Attivo
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: LE FOLLIE DELL'IMPERATORE -->
+    <section id="follie-imperatore" class="cinema-section">
+        <div class="container">
+            <div class="movie-grid">
+                <div class="movie-poster-column">
+                    <div class="poster-wrapper">
+                        <span class="movie-badge-top">30 LUG - 21:00</span>
+                        <img src="assets/img/follie-imperatore.jpeg" alt="Le Follie dell'Imperatore" class="movie-poster" onerror="this.src='assets/img/Monasterolo.jpg'">
+                    </div>
+                </div>
+                <div class="movie-info-column">
+                    <div class="movie-header-block">
+                        <h2>Le Follie dell'Imperatore</h2>
+                        <div class="movie-subtitle">Ritorno alle Origini</div>
+                    </div>
+                    
+                    <div class="tagline-box">
+                        Folle come il titolo, attuale come la prima volta!
+                    </div>
+
+                    <p class="movie-desc">
+                        Boom, Baby! Un imperatore viziato, una perfida consigliera e una pozione sbagliata che lo trasforma in... un lama! 
+                        Per festeggiare la nostra 10ª edizione, riportiamo in scena il primissimo film della nostra storia. Tra scoiattoli vendicativi e risate a crepapelle, vi aspettiamo nella nostra suggestiva piazza, per una serata pazza!
+                    </p>
+
+                    <!-- Technical Details -->
+                    <div class="tech-details">
+                        <span class="tech-item"><i class="fa-regular fa-calendar"></i> 30 Luglio 2026, ore 21:00</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Piazza IV Novembre</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-solid fa-film"></i> Animazione / Commedia</span>
+                        <span class="tech-item separator">|</span>
+                        <span class="tech-item"><i class="fa-regular fa-clock"></i> 78 Min.</span>
+                    </div>
+
+                    <!-- Extras -->
+                    <div class="extra-box">
+                        <i class="fa-solid fa-mug-hot"></i> Servizio Bar Attivo
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING ACTIONS: MINI-NAVBAR & BACK TO TOP -->
+    <div class="floating-actions">
+        <a href="#" class="btn-floating" id="btn-back-to-top" title="Torna all'inizio">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contatti">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Proloco Monasterolo del Castello</h3>
+                <p>Valorizziamo il nostro territorio in collaborazione con i Giovani Volontari Monasterolo.</p>
+            </div>
+            <div class="footer-social">
+                <p>Rimani aggiornato:</p>
+                <a href="https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T" target="_blank" class="social-link wa-link">
+                    <i class="fa-brands fa-whatsapp"></i> Iscriviti al Canale
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Proloco Monasterolo del Castello. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // --- Gestione Interfaccia e Interattività Locale della Pagina ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Back to Top Button
+            const backToTopBtn = document.getElementById('btn-back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.opacity = '1';
+                    backToTopBtn.style.pointerEvents = 'auto';
+                } else {
+                    backToTopBtn.style.opacity = '0';
+                    backToTopBtn.style.pointerEvents = 'none';
+                }
+            });
+
+            // Set initially invisible
+            backToTopBtn.style.opacity = '0';
+            backToTopBtn.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+
+            // 2. Active State on Sub-navigation during scroll (Spy effect)
+            const sections = document.querySelectorAll('.cinema-section');
+            const subNavLinks = document.querySelectorAll('.cinema-nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const scrollPos = window.scrollY + 180; // Offset for header + subnav
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                subNavLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // 3. Smooth scrolling when page is loaded with hash link
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    setTimeout(() => {
+                        const targetOffset = target.offsetTop - 140; // Offset spacing
+                        window.scrollTo({
+                            top: targetOffset,
+                            behavior: 'smooth'
+                        });
+                    }, 200);
+                }
+            }
+
+            // Override click on subnav links to offset the sticky subnav height correctly
+            subNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        const targetOffset = target.offsetTop - 140; // Offset spacing
+                        window.scrollTo({
+                            top: targetOffset,
+                            behavior: 'smooth'
+                        });
+                        // Update hash in URL
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

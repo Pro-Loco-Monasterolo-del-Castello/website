@@ -13,13 +13,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (href.startsWith('#')) {
             e.preventDefault(); // Annulliamo il salto di sistema brusco predefinito
 
-            // Troviamo sulla pagina l'elemento a cui puntiamo
-            const target = document.querySelector(href);
-            if (target) {
-                // Diamo istruzione al browser di scorrere dolcemente fino alla posizione del target
-                target.scrollIntoView({
+            if (href === '#') {
+                // Se l'ancora è solo '#', scorriamo dolcemente a inizio pagina
+                window.scrollTo({
+                    top: 0,
                     behavior: 'smooth'
                 });
+            } else {
+                // Troviamo sulla pagina l'elemento a cui puntiamo
+                const target = document.querySelector(href);
+                if (target) {
+                    // Diamo istruzione al browser di scorrere dolcemente fino alla posizione del target
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             }
         }
     });
@@ -50,25 +58,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Svuotiamo il contenuto segnaposto prima di costruire le card grafiche
                 eventsContainer.innerHTML = ''; 
                 
+                // Filtriamo per ottenere solo gli eventi da mettere in "vetrina", limitandoci a 3
+                const featuredEvents = events.filter(e => e.featured).slice(0, 3);
+
                 // Nel caso la lista eventi nel JSON fosse vuota o tutti eliminati, mostriamo un avviso elegante
-                if (events.length === 0) {
+                if (featuredEvents.length === 0) {
                     eventsContainer.innerHTML = '<p>Nessun evento in programma al momento.</p>';
                     return;
                 }
                 
-                // Cicliamo array di eventi, e per ongi blocco costruiamo al volo la sua card HTML personalizzata
-                events.forEach(event => {
+                // Cicliamo array di eventi, e per ogni blocco costruiamo al volo la sua card HTML personalizzata
+                featuredEvents.forEach(event => {
+                    // === NOVITA': Generazione Tag per ogni organizzatore ===
+                    // Se esistono associazioni per questo evento, creiamo piccoli blocchi <span> colorati
+                    const tagsHTML = event.associations ? event.associations.map(assoc => {
+                        // Creiamo una classe CSS sicura (es. 'Avis' -> 'tag-avis' ; 'Gruppo Alpini' -> 'tag-gruppo-alpini')
+                        const safeClass = assoc.toLowerCase().replace(/\s+/g, '-');
+                        return `<span class="tag-badge tag-${safeClass}">${assoc}</span>`;
+                    }).join('') : '';
+
                     const card = document.createElement('div');
                     card.className = 'event-card';
                     card.innerHTML = `
-                        <!-- 'onerror' è una mossa di sicurezza: se la foto caricata non esiste o e' rotta la URL, forzeremo la visualizzazione di un'immagine sostitutiva -->
-                        <img src="${event.image}" alt="${event.title}" class="event-image" onerror="this.src='assets/img/Monasterolo.jpg'">
+                        <!-- 'onerror' è una mossa di sicurezza -->
+                        <div class="event-image-wrapper">
+                            <img src="${event.image}" alt="${event.title}" class="event-image" onerror="this.src='assets/img/Monasterolo.jpg'">
+                            <div class="event-tags-container">${tagsHTML}</div>
+                        </div>
                         <div class="event-content">
                             <div class="event-date"><i class="fa-regular fa-calendar"></i> ${event.date}</div>
                             <h3>${event.title}</h3>
                             <p>${event.short_desc}</p>
-                            <!-- Bottone con query string. Tramite '?id=xxxxx' passiamo al file evento.html un indicatore che gli farà sapere chi mostrare! -->
-                            <a href="evento.html?id=${event.id}" class="btn-outline">Scopri di più</a>
+                            <!-- Bottone con query string. Se c'è un custom_link, usiamo quello, altrimenti il link di dettaglio standard! -->
+                            <a href="${event.custom_link || 'evento.html?id=' + event.id}" class="btn-outline">Scopri di più</a>
                         </div>
                     `;
                     // Infine accodiamo il blocco generato nel container padrone visibile sul sito
@@ -107,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(events => {
-                // ...ma questa volta invece di stamparli tutti usiamo .find() per cercare SOLO l'evento dove i codici ID combaciano
+                // Cerchiamo l'evento specifico il cui "id" combacia con l'id cercato nell'URL
                 const event = events.find(e => e.id === eventId);
                 
                 // Se viene inserito un id fantasma o obsoleto (evento.html?id=falso-id)
@@ -115,6 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     eventDetailContainer.innerHTML = `<h2>Evento non trovato</h2><p>L'evento richiesto non esiste.</p>`;
                     return;
                 }
+
+                // Generiamo i badge delle associazioni anche per la pagina dettagli
+                const tagsHTML = event.associations ? event.associations.map(assoc => {
+                    const safeClass = assoc.toLowerCase().replace(/\s+/g, '-');
+                    return `<span class="tag-badge tag-${safeClass}">${assoc}</span>`;
+                }).join('') : '';
 
                 // -> COSTRUIAMO I METADATI (Info Veloci): Formiamo le etichette solo se il relativo dato esiste all'interno del JSON (evita caselle vuote/rotte)
                 let metaHTML = `<div class="meta-item"><i class="fa-regular fa-calendar"></i> ${event.date || 'Data da definire'}</div>`;
@@ -172,10 +200,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${mediaHTML}
                         <div class="event-detail-body">
                             <h1 class="event-detail-title">${event.title}</h1>
+                            <div style="margin-bottom: 15px;">${tagsHTML}</div>
                             <div class="event-detail-meta">
                                 ${metaHTML}
                             </div>
-                            <!-- Un piccolo trick JS: Spezziamo il testo lungo usando 'Andare-a-Capo' (\n) e lo traduciamo per l'HTML nel tag paragrafo nativo <p> -->
+                            <!-- Convertiamo i ritorni a capo testuali (\n) in veri paragrafi HTML (<p>) -->
                             <div class="event-detail-desc">
                                 ${event.full_desc ? event.full_desc.split('\n').map(p => `<p>${p}</p>`).join('') : '<p>Dettagli non disponibili.</p>'}
                             </div>
