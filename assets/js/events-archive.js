@@ -67,11 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Costruiamo e agganciamo le Cards (Se ci sono collaborazioni, le vedrai multiple in varie sezioni!)
                     assocEvents.forEach(event => {
                         
-                        // Generiamo le targhette dell'evento. (Così l'utente capisce visivamente la collaborazione)
-                        const tagsHTML = event.associations.map(a => {
+                        let tagsHTML = event.associations.map(a => {
                             const sc = a.toLowerCase().replace(/\s+/g, '-');
                             return `<span class="tag-badge tag-${sc}">${a}</span>`;
                         }).join('');
+
+                        if (event.release_year) {
+                            tagsHTML += `<span class="tag-badge tag-year"><i class="fa-solid fa-clapperboard"></i> ${event.release_year}</span>`;
+                        }
 
                         const card = document.createElement('div');
                         card.className = 'event-card';
