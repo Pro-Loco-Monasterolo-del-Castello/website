@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dettaglio Evento | Proloco Monasterolo del Castello</title>
+    <title>Archivio Eventi | Proloco Monasterolo del Castello</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -26,11 +26,15 @@
         </div>
     </header>
 
-    <section class="event-detail-section bg-light">
-        <div class="container" id="event-detail-container">
-            <!-- Event details populated dynamically here -->
-            <div style="text-align: center; padding: 50px 0;">
-                <p>Caricamento evento in corso <i class="fa-solid fa-spinner fa-spin"></i></p>
+    <!-- EVENTS ARCHIVE SECTION -->
+    <section class="events-section bg-light" style="padding-top: 140px; min-height: 80vh;">
+        <div class="container">
+            <h2><i class="fa-solid fa-layer-group"></i> Archivio Eventi per Associazione</h2>
+            <p style="margin-bottom: 50px;">Sfoglia tutto il catalogo degli eventi passati e futuri organizzati a Monasterolo del Castello.</p>
+            <div id="archive-container">
+                <div style="text-align: center; padding: 50px 0;">
+                    <p>Caricamento eventi in corso <i class="fa-solid fa-spinner fa-spin"></i></p>
+                </div>
             </div>
         </div>
     </section>
@@ -53,6 +57,8 @@
         </div>
     </footer>
 
+    <!-- Carichiamo prima script base per la navbar ecc, poi script archivio -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/events-archive.js"></script>
 </body>
 </html>

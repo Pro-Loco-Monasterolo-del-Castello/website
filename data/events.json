@@ -15,7 +15,9 @@
             "https://images.unsplash.com/photo-1544025162-81111420d4d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         ],
-        "booking_link": ""
+        "booking_link": "",
+        "featured": true,
+        "associations": ["Proloco"]
     },
     {
         "id": "visita-guidata-castello",
@@ -33,7 +35,9 @@
             "https://images.unsplash.com/photo-1599388851493-9c8e826e108e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
             "https://images.unsplash.com/photo-1582540608553-61de83f6aa6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         ],
-        "booking_link": "https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T"
+        "booking_link": "https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T",
+        "featured": true,
+        "associations": ["Proloco"]
     },
     {
         "id": "piazza-dance",
@@ -45,6 +49,27 @@
         "location": "Piazza IV Novembre, Monasterolo del Castello",
         "price": "Ingresso libero, consumazioni a pagamento",
         "image": "assets/img/Cannoni.jpg",
-        "booking_link": ""
+        "booking_link": "",
+        "featured": true,
+        "associations": ["GVM"]
+
+    },
+    {
+    "id": "sagra-del-castoncello",
+    "title": "Sagra del Castoncello",
+    "short_desc": "Degustazione del Castoncello, un'esclusiva e gustosa rivisitazione locale dei tipici casoncelli bergamaschi, tra buon cibo, musica e tradizione.",
+    "full_desc": "Inserita nella storica cornice della 'Festa del 12' o Festa del Voto, la Sagra del Castoncello è l'appuntamento imperdibile dell'estate a Monasterolo del Castello. Un'occasione per stare in compagnia e degustare il 'Castoncello', l'espressione locale dei tradizionali casoncelli delle nonne. La cena si svolge alla Casa della Gente e la serata prosegue poi in piazza con musica dal vivo, balli, intrattenimento e la classica e ricchissima Supertombola finale.",
+    "date": "12 Agosto 2026",
+    "time": "Ore 19:30",
+    "location": "Casa della Gente, Monasterolo del Castello (BG)",
+    "price": "Ingresso libero (consumazioni a pagamento)",
+    "website": "",
+    "image": "assets/img/Castoncello.jpg",
+    "gallery": [
+        ""
+    ],
+    "booking_link": "",
+    "featured": false,
+        "associations": ["Proloco", "Gruppo Castoncello"]
     }
 ]
