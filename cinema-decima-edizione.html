@@ -145,9 +145,15 @@
 
         .cinema-nav-container {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 15px;
             padding: 0 15px;
+        }
+
+        @media (min-width: 768px) {
+            .cinema-nav-container {
+                justify-content: center;
+            }
         }
 
         .cinema-nav-link {
@@ -672,8 +678,6 @@
                     <div class="tech-details">
                         <span class="tech-item"><i class="fa-regular fa-calendar"></i> 9 Luglio 2026, ore 20:45</span>
                         <span class="tech-item separator">|</span>
-                        <span class="tech-item"><i class="fa-solid fa-clapperboard"></i> 2022</span>
-                        <span class="tech-item separator">|</span>
                         <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Ristorante Bolen</span>
                         <span class="tech-item separator">|</span>
                         <span class="tech-item"><i class="fa-solid fa-film"></i> Commedia Romantica</span>
@@ -760,8 +764,6 @@
                     <div class="tech-details">
                         <span class="tech-item"><i class="fa-regular fa-calendar"></i> 16 Luglio 2026, ore 21:00</span>
                         <span class="tech-item separator">|</span>
-                        <span class="tech-item"><i class="fa-solid fa-clapperboard"></i> 1991</span>
-                        <span class="tech-item separator">|</span>
                         <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Castello di Monasterolo</span>
                         <span class="tech-item separator">|</span>
                         <span class="tech-item"><i class="fa-solid fa-film"></i> Fantasy / Musical</span>
@@ -810,8 +812,6 @@
                     <div class="tech-details">
                         <span class="tech-item"><i class="fa-regular fa-calendar"></i> 23 Luglio 2026, ore 21:00</span>
                         <span class="tech-item separator">|</span>
-                        <span class="tech-item"><i class="fa-solid fa-clapperboard"></i> 1975</span>
-                        <span class="tech-item separator">|</span>
                         <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Parco Biali, Riva Lago</span>
                         <span class="tech-item separator">|</span>
                         <span class="tech-item"><i class="fa-solid fa-film"></i> Thriller / Suspense</span>
@@ -859,8 +859,6 @@
                     <!-- Technical Details -->
                     <div class="tech-details">
                         <span class="tech-item"><i class="fa-regular fa-calendar"></i> 30 Luglio 2026, ore 21:00</span>
-                        <span class="tech-item separator">|</span>
-                        <span class="tech-item"><i class="fa-solid fa-clapperboard"></i> 2000</span>
                         <span class="tech-item separator">|</span>
                         <span class="tech-item"><i class="fa-solid fa-location-dot"></i> Piazza IV Novembre</span>
                         <span class="tech-item separator">|</span>
