@@ -71,15 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 featuredEvents.forEach(event => {
                     // === NOVITA': Generazione Tag per ogni organizzatore ===
                     // Se esistono associazioni per questo evento, creiamo piccoli blocchi <span> colorati
-                    let tagsHTML = event.associations ? event.associations.map(assoc => {
+                    const tagsHTML = event.associations ? event.associations.map(assoc => {
                         // Creiamo una classe CSS sicura (es. 'Avis' -> 'tag-avis' ; 'Gruppo Alpini' -> 'tag-gruppo-alpini')
                         const safeClass = assoc.toLowerCase().replace(/\s+/g, '-');
                         return `<span class="tag-badge tag-${safeClass}">${assoc}</span>`;
                     }).join('') : '';
-
-                    if (event.release_year) {
-                        tagsHTML += `<span class="tag-badge tag-year"><i class="fa-solid fa-clapperboard"></i> ${event.release_year}</span>`;
-                    }
 
                     const card = document.createElement('div');
                     card.className = 'event-card';
