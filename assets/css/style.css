@@ -174,6 +174,17 @@ body {
     border-color: var(--whatsapp-dark);
 }
 
+.btn-phone {
+    background-color: #e67e22;
+    color: var(--text-light);
+    border: 2px solid #e67e22;
+}
+
+.btn-phone:hover {
+    background-color: #d35400;
+    border-color: #d35400;
+}
+
 /* --- Sezione Territorio --- */
 .about-section {
     padding: 80px 0;
@@ -588,3 +599,555 @@ footer {
     background-color: #e0e0e0;
     border-color: #ccc;
 }
+
+/* --- Past Events Styling --- */
+.tag-concluso {
+    background-color: #6c757d !important;
+    color: #ffffff;
+}
+
+.event-card.past-card {
+    border: 1px solid #e0e0e0;
+    background-color: #fafafa;
+}
+
+.event-card.past-card .event-image {
+    filter: grayscale(25%);
+    opacity: 0.9;
+}
+
+.event-card.past-card .event-date {
+    color: #6c757d;
+}
+
+.past-event-notice {
+    background-color: #f8f9fa;
+    border-left: 4px solid #6c757d;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    color: #495057;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.archive-subheading {
+    color: var(--dark-blue);
+    font-size: 1.4rem;
+    margin: 25px 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 8px;
+}
+
+.archive-subheading.past-subheading {
+    color: #6c757d;
+    margin-top: 45px;
+}
+
+/* Utility text alignment */
+.text-center {
+    text-align: center !important;
+}
+
+.section-header {
+    text-align: center;
+}
+
+/* --- Eventi Memorabili & Rassegne Section (Homepage) --- */
+.memorabili-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.memorabili-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.memorabile-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eaeaea;
+}
+
+.memorabile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.14);
+}
+
+.memorabile-image-wrapper {
+    position: relative;
+    height: 220px;
+    width: 100%;
+}
+
+.memorabile-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.memorabile-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.memorabile-badge {
+    color: var(--primary-blue);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.memorabile-content h3 {
+    font-size: 1.6rem;
+    color: var(--dark-blue);
+    margin-bottom: 12px;
+}
+
+.memorabile-content p {
+    color: #555;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* --- Dedicated Sagra del Castoncello Page Styles --- */
+.castoncello-hero {
+    position: relative;
+    padding: 160px 0 90px;
+    background-image: url('../img/Castoncello.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    margin-top: 60px;
+}
+
+.castoncello-hero .hero-overlay {
+    background: linear-gradient(135deg, rgba(18, 99, 133, 0.92), rgba(0, 0, 0, 0.78));
+}
+
+.badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.badge-gold {
+    background-color: #f1c40f;
+    color: #2c3e50;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.badge-lombardia {
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.castoncello-title {
+    font-size: 3.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    color: #ffffff;
+}
+
+.castoncello-subtitle {
+    font-size: 1.5rem;
+    color: #f1c40f;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.event-meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    padding: 10px 24px;
+    border-radius: 30px;
+    margin-bottom: 35px;
+    font-size: 1.05rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dot-separator {
+    opacity: 0.6;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-hero-call {
+    font-size: 1.15rem;
+    padding: 14px 32px;
+    box-shadow: 0 6px 18px rgba(230, 126, 34, 0.4);
+}
+
+.btn-hero-secondary {
+    font-size: 1.1rem;
+    padding: 14px 28px;
+}
+
+/* Highlight Bar */
+.highlight-bar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+    padding: 30px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.highlight-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 320px;
+}
+
+.highlight-item i {
+    font-size: 2.2rem;
+    color: #e67e22;
+}
+
+.highlight-item strong {
+    display: block;
+    color: var(--dark-blue);
+    font-size: 1.05rem;
+}
+
+.highlight-item p {
+    font-size: 0.88rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Castoncello Sections */
+.castoncello-section {
+    padding: 80px 0;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 45px;
+}
+
+/* Menu Cards Grid */
+.menu-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.menu-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 35px 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card.featured-menu-card {
+    border: 2px solid #e67e22;
+    box-shadow: 0 8px 25px rgba(230, 126, 34, 0.15);
+}
+
+.star-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e67e22;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.menu-icon {
+    font-size: 2.8rem;
+    color: #e67e22;
+    margin-bottom: 15px;
+}
+
+.menu-card h3 {
+    font-size: 1.6rem;
+    color: var(--dark-blue);
+    margin-bottom: 4px;
+}
+
+.menu-subtitle-text {
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.menu-card-body p {
+    color: #555;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.menu-options {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.option-pill {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.option-pill.carne { background: #fdf2e9; color: #d35400; }
+.option-pill.veggy { background: #e8f8f5; color: #27ae60; }
+.option-pill.standard { background: #ebf5fb; color: #2980b9; }
+
+.menu-note-box {
+    background: #fff8e7;
+    border-left: 3px solid #f39c12;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    border-radius: 4px;
+}
+
+/* Timeline */
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 30px;
+    border-left: 3px solid var(--primary-blue);
+}
+
+.timeline-step {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 30px;
+}
+
+.timeline-step:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-time {
+    display: inline-block;
+    background: var(--primary-blue);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+.timeline-badge {
+    position: absolute;
+    left: -46px;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background: #ffffff;
+    border: 3px solid var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+    font-size: 1.35rem;
+    color: var(--dark-blue);
+    margin-bottom: 6px;
+}
+
+.timeline-content p {
+    color: #555;
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+/* Booking CTA Section */
+.booking-cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--dark-blue), #0d4b65);
+    color: #ffffff;
+}
+
+.booking-cta-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 50px 30px;
+}
+
+.cta-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: #e67e22;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+}
+
+.booking-cta-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.booking-cta-card p {
+    font-size: 1.15rem;
+    color: #e0e0e0;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+}
+
+.phone-highlight-box {
+    background: rgba(255,255,255,0.15);
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.phone-number {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.phone-number span {
+    color: #f1c40f;
+    letter-spacing: 1px;
+}
+
+.cta-button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta-lg {
+    font-size: 1.15rem;
+    padding: 15px 35px;
+}
+
+/* Info Dual Grid */
+.info-dual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.info-box h3 {
+    font-size: 1.35rem;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95rem;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.style-margin-top {
+    margin-top: 40px;
+}

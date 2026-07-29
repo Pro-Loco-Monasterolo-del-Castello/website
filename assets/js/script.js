@@ -57,9 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(events => {
                 // Svuotiamo il contenuto segnaposto prima di costruire le card grafiche
                 eventsContainer.innerHTML = ''; 
-                
-                // Filtriamo per ottenere solo gli eventi da mettere in "vetrina", limitandoci a 3
-                const featuredEvents = events.filter(e => e.featured).slice(0, 3);
+                // Filtriamo per ottenere tutti gli eventi in evidenza non ancora conclusi
+                const featuredEvents = events.filter(e => e.featured && !e.past);
 
                 // Nel caso la lista eventi nel JSON fosse vuota o tutti eliminati, mostriamo un avviso elegante
                 if (featuredEvents.length === 0) {
@@ -72,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     // === NOVITA': Generazione Tag per ogni organizzatore ===
                     // Se esistono associazioni per questo evento, creiamo piccoli blocchi <span> colorati
                     const tagsHTML = event.associations ? event.associations.map(assoc => {
-                        // Creiamo una classe CSS sicura (es. 'Avis' -> 'tag-avis' ; 'Gruppo Alpini' -> 'tag-gruppo-alpini')
                         const safeClass = assoc.toLowerCase().replace(/\s+/g, '-');
                         return `<span class="tag-badge tag-${safeClass}">${assoc}</span>`;
                     }).join('') : '';
@@ -138,11 +136,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
 
-                // Generiamo i badge delle associazioni anche per la pagina dettagli
-                const tagsHTML = event.associations ? event.associations.map(assoc => {
+                // Generiamo i badge delle associazioni ed eventualmente il badge Concluso
+                let tagsHTML = event.associations ? event.associations.map(assoc => {
                     const safeClass = assoc.toLowerCase().replace(/\s+/g, '-');
                     return `<span class="tag-badge tag-${safeClass}">${assoc}</span>`;
                 }).join('') : '';
+
+                if (event.past) {
+                    tagsHTML += `<span class="tag-badge tag-concluso"><i class="fa-solid fa-check"></i> Concluso</span>`;
+                }
+
+                // Avviso evento passato
+                const pastNoticeHTML = event.past ? `
+                    <div class="past-event-notice">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>Questo evento si è svolto in data <strong>${event.date}</strong> ed è attualmente concluso.</span>
+                    </div>
+                ` : '';
 
                 // -> COSTRUIAMO I METADATI (Info Veloci): Formiamo le etichette solo se il relativo dato esiste all'interno del JSON (evita caselle vuote/rotte)
                 let metaHTML = `<div class="meta-item"><i class="fa-regular fa-calendar"></i> ${event.date || 'Data da definire'}</div>`;
@@ -151,10 +161,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (event.price) {    metaHTML += `<div class="meta-item"><i class="fa-solid fa-ticket"></i> ${event.price}</div>`; }
                 if (event.website) {  metaHTML += `<div class="meta-item"><i class="fa-solid fa-globe"></i> <a href="${event.website}" target="_blank" rel="noopener noreferrer" style="color:var(--primary-blue); text-decoration:none; font-weight:600;">Sito Web</a></div>`; }
 
-                // -> COSTRUIAMO I BOTTONI DI AZIONE: Il link prenotazione comparirà unicamente se riempito sul file JSON
-                let actionsHTML = `<a href="index.html#eventi" class="btn btn-secondary">Torna agli Eventi</a>`;
-                if (event.booking_link) {
-                    actionsHTML += `<a href="${event.booking_link}" target="_blank" class="btn btn-primary">Prenota Ora</a>`;
+                // -> COSTRUIAMO I BOTTONI DI AZIONE: Il link prenotazione comparirà unicamente se l'evento NON è passato ed ha un booking_link
+                let actionsHTML = `<a href="tutti-eventi.html" class="btn btn-secondary">Torna all'Archivio Eventi</a>`;
+                if (event.booking_link && !event.past) {
+                    const isWa = event.booking_link.includes('wa.me') || event.booking_link.includes('whatsapp');
+                    const isTel = event.booking_link.startsWith('tel:');
+                    
+                    let btnClass = 'btn btn-primary';
+                    let btnText = 'Prenota Ora';
+                    let targetAttr = 'target="_blank"';
+
+                    if (isWa) {
+                        btnClass = 'btn btn-whatsapp';
+                        btnText = '<i class="fa-brands fa-whatsapp"></i> Prenota su WhatsApp';
+                    } else if (isTel) {
+                        btnClass = 'btn btn-phone';
+                        btnText = `<i class="fa-solid fa-phone"></i> ${event.booking_label || 'Chiama per Prenotare'}`;
+                        targetAttr = '';
+                    }
+
+                    actionsHTML += `<a href="${event.booking_link}" ${targetAttr} class="${btnClass}">${btnText}</a>`;
+                } else if (event.past) {
+                    actionsHTML += `<span class="btn btn-secondary" style="opacity: 0.7; cursor: default;"><i class="fa-solid fa-check-circle"></i> Evento Concluso</span>`;
                 }
 
                 // -> COSTRUIAMO LA VISUALE MULTIMEDIALE (Carosello Vs. Singola Immagine)
@@ -201,6 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="event-detail-body">
                             <h1 class="event-detail-title">${event.title}</h1>
                             <div style="margin-bottom: 15px;">${tagsHTML}</div>
+                            ${pastNoticeHTML}
                             <div class="event-detail-meta">
                                 ${metaHTML}
                             </div>

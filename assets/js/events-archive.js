@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // STEP 1: Analizziamo tutti gli eventi per trovare l'elenco delle Associazioni Uniche
-                // Usiamo un Set() perché garantisce che non ci siano nomi duplicati
                 const allAssociations = new Set();
                 events.forEach(event => {
                     if (event.associations && event.associations.length > 0) {
@@ -29,65 +28,93 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                // Non ci sono eventi con associazioni registrate
                 if (allAssociations.size === 0) {
                     archiveContainer.innerHTML = '<p>Nessuna associazione organizzatrice registrata nel database.</p>';
                     return;
                 }
 
-                // Convertiamo il Set in Array e lo ordiniamo in ordine alfabetico
                 const assocArray = Array.from(allAssociations).sort();
+
+                // Funzione per creare la card di un evento (prossimo o passato)
+                const createCard = (event) => {
+                    const isPast = Boolean(event.past);
+                    let tagsHTML = event.associations.map(a => {
+                        const sc = a.toLowerCase().replace(/\s+/g, '-');
+                        return `<span class="tag-badge tag-${sc}">${a}</span>`;
+                    }).join('');
+
+                    if (isPast) {
+                        tagsHTML += `<span class="tag-badge tag-concluso"><i class="fa-solid fa-check"></i> Concluso</span>`;
+                    }
+
+                    const card = document.createElement('div');
+                    card.className = isPast ? 'event-card past-card' : 'event-card';
+                    card.innerHTML = `
+                        <div class="event-image-wrapper">
+                            <img src="${event.image}" alt="${event.title}" class="event-image" onerror="this.src='assets/img/Monasterolo.jpg'">
+                            <div class="event-tags-container">${tagsHTML}</div>
+                        </div>
+                        <div class="event-content" style="text-align: left;">
+                            <div class="event-date">
+                                <i class="fa-regular fa-calendar"></i> ${event.date}
+                                ${isPast ? '<strong style="color: #6c757d; font-size:0.85rem; margin-left: 5px;">[Concluso]</strong>' : ''}
+                            </div>
+                            <h3 style="color: ${isPast ? '#555' : 'var(--primary-blue)'}; font-size: 1.4rem;">${event.title}</h3>
+                            <p style="font-size:1rem;">${event.short_desc}</p>
+                            <a href="${event.custom_link || 'evento.html?id=' + event.id}" class="btn-outline">${isPast ? 'Vedi Dettagli' : 'Scopri di più'}</a>
+                        </div>
+                    `;
+                    return card;
+                };
 
                 // STEP 2: Renderizziamo le Sezioni Dinamiche per ogni Associazione Trovata
                 assocArray.forEach(assoc => {
-                    // Rendiamo il nome sicuro per usarlo come ID e Nome-Classe CSS
                     const safeClass = assoc.toLowerCase().replace(/\s+/g, '-');
                     
-                    // Creiamo il nuovo blocco contenitore (La "Categoria" Proloco, o Avis...)
                     const groupSection = document.createElement('div');
-                    groupSection.style.marginBottom = '80px';
+                    groupSection.style.marginBottom = '70px';
                     groupSection.style.textAlign = 'left';
 
-                    // Intestazione Categoria con Tag dedicato e la Griglia vuota da riempire sotto
-                    groupSection.innerHTML = `
-                        <h3 style="color: var(--dark-blue); font-size: 2.2rem; border-bottom: 2px solid #ccc; padding-bottom: 15px; margin-bottom: 40px; display:flex; align-items:center; gap: 15px;">
-                            <span class="tag-badge tag-${safeClass}" style="font-size: 1.2rem; padding: 5px 15px;">${assoc}</span> Eventi in programma
+                    const assocEvents = events.filter(e => e.associations && e.associations.includes(assoc));
+                    const upcomingEvents = assocEvents.filter(e => !e.past);
+                    const pastEvents = assocEvents.filter(e => e.past);
+
+                    let sectionHTML = `
+                        <h3 style="color: var(--dark-blue); font-size: 2.2rem; border-bottom: 2px solid #ccc; padding-bottom: 15px; margin-bottom: 25px; display:flex; align-items:center; gap: 15px;">
+                            <span class="tag-badge tag-${safeClass}" style="font-size: 1.2rem; padding: 5px 15px;">${assoc}</span> Catalogo Eventi
                         </h3>
-                        <div class="events-grid" id="grid-${safeClass}"></div>
                     `;
 
-                    archiveContainer.appendChild(groupSection);
-                    
-                    // Cerchiamo la griglia appena "iniettata" nel DOM
-                    const grid = groupSection.querySelector(`#grid-${safeClass}`);
-
-                    // STEP 3: Filtriamo tutti gli eventi e teniamo SOLO quelli in cui compare QUESTA associazione
-                    const assocEvents = events.filter(e => e.associations && e.associations.includes(assoc));
-
-                    // Costruiamo e agganciamo le Cards (Se ci sono collaborazioni, le vedrai multiple in varie sezioni!)
-                    assocEvents.forEach(event => {
-                        
-                        const tagsHTML = event.associations.map(a => {
-                            const sc = a.toLowerCase().replace(/\s+/g, '-');
-                            return `<span class="tag-badge tag-${sc}">${a}</span>`;
-                        }).join('');
-
-                        const card = document.createElement('div');
-                        card.className = 'event-card';
-                        card.innerHTML = `
-                            <div class="event-image-wrapper">
-                                <img src="${event.image}" alt="${event.title}" class="event-image" onerror="this.src='assets/img/Monasterolo.jpg'">
-                                <div class="event-tags-container">${tagsHTML}</div>
-                            </div>
-                            <div class="event-content" style="text-align: left;">
-                                <div class="event-date"><i class="fa-regular fa-calendar"></i> ${event.date}</div>
-                                <h3 style="color: var(--primary-blue); font-size: 1.4rem;">${event.title}</h3>
-                                <p style="font-size:1rem;">${event.short_desc}</p>
-                                <a href="${event.custom_link || 'evento.html?id=' + event.id}" class="btn-outline">Scopri di più</a>
-                            </div>
+                    if (upcomingEvents.length > 0) {
+                        sectionHTML += `
+                            <h4 class="archive-subheading"><i class="fa-solid fa-calendar-days"></i> Prossimi Eventi in Programma</h4>
+                            <div class="events-grid" id="grid-upcoming-${safeClass}"></div>
                         `;
-                        grid.appendChild(card);
-                    });
+                    }
+
+                    if (pastEvents.length > 0) {
+                        sectionHTML += `
+                            <h4 class="archive-subheading past-subheading"><i class="fa-solid fa-clock-rotate-left"></i> Archivio Eventi Conclusi</h4>
+                            <div class="events-grid" id="grid-past-${safeClass}"></div>
+                        `;
+                    }
+
+                    groupSection.innerHTML = sectionHTML;
+                    archiveContainer.appendChild(groupSection);
+
+                    if (upcomingEvents.length > 0) {
+                        const upcomingGrid = groupSection.querySelector(`#grid-upcoming-${safeClass}`);
+                        upcomingEvents.forEach(event => {
+                            upcomingGrid.appendChild(createCard(event));
+                        });
+                    }
+
+                    if (pastEvents.length > 0) {
+                        const pastGrid = groupSection.querySelector(`#grid-past-${safeClass}`);
+                        pastEvents.forEach(event => {
+                            pastGrid.appendChild(createCard(event));
+                        });
+                    }
                 });
             })
             .catch(error => {
