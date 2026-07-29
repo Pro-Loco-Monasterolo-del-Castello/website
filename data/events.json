@@ -1,129 +1,5 @@
 [
-    {
-        "id": "Mercatino",
-        "title": "Mercatino di Via Loj",
-        "short_desc": "Un viaggio tra tradizione, sapori e artigianato nel cuore di Monasterolo del Castello, dove ogni estate il borgo si anima di vita, colori e solidarietà.",
-        "full_desc": "Nel suggestivo centro storico di Monasterolo del Castello, affacciato sulle acque del Lago di Endine, prende vita ogni 14 agosto il tradizionale Mercatino di Via Loj.\n\nNato nel 1988 dall’impegno delle associazioni locali, questo evento è cresciuto negli anni fino a trasformarsi in una vera e propria festa di comunità, capace di richiamare migliaia di visitatori. Le vie del borgo si riempiono di espositori tra artigiani, hobbisti e produttori locali, offrendo un ricco percorso tra creazioni artistiche, oggetti fatti a mano e specialità gastronomiche.\n\nPasseggiando lungo Via Loj e tra i vicoli circostanti, i visitatori possono scoprire antiche tecniche artigianali, assaporare ricette della tradizione e vivere un’atmosfera autentica, fatta di profumi, musica e convivialità.\n\nParte integrante della rassegna estiva, il mercatino rappresenta anche un momento di valorizzazione del territorio e delle sue tradizioni.\n\nIl Mercatino di Via Loj non è solo un mercato, ma un’occasione per vivere il borgo e riscoprire il valore delle tradizioni locali in un’atmosfera calda e coinvolgente.",
-        "date": "14 Agosto 2026",
-        "time": "Dalle 12:00 alle 24:00",
-        "location": "Vie del Paese, Monasterolo del Castello",
-        "price": "Ingresso libero, consumazioni a pagamento",
-        "website": "https://www.vialoj.it/",
-        "image": "assets/img/Mercatino.jpg",
-        "gallery": [
-            "assets/img/Mercatino.jpg",
-            "https://images.unsplash.com/photo-1544025162-81111420d4d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        ],
-        "booking_link": "",
-        "featured": false,
-        "associations": ["Proloco"]
-    },
-    {
-        "id": "visita-guidata-castello",
-        "title": "Visita Guidata al Castello",
-        "short_desc": "Scopri i segreti e la storia dell'antico Castello di Monasterolo con una guida esperta.",
-        "full_desc": "Un'occasione unica per immergersi nella storia di Monasterolo del Castello. Le nostre guide turistiche abilitate vi accompagneranno in un viaggio nel tempo attraverso le stanze e i cortili del pittoresco Castello.\nScoprirete leggende, aneddoti e la storia delle nobili famiglie che lo hanno abitato. Al termine della visita sarà offerto un piccolo aperitivo nel giardino interno.",
-        "date": "Date da Definire",
-        "time": "Ore 10:30 e 11:30",
-        "location": "Castello di Monasterolo, Piazzetta Contessa V. Terni de Gregori, 1",
-        "price": "€ 4,00 a persona",
-        "website": "",
-        "image": "assets/img/Castello.jpeg",
-        "gallery": [
-            "assets/img/Castello.jpeg",
-            "https://images.unsplash.com/photo-1599388851493-9c8e826e108e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1582540608553-61de83f6aa6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        ],
-        "booking_link": "https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T",
-        "featured": false,
-        "associations": ["Proloco"]
-    },
-    {
-    "id": "sagra-del-castoncello",
-    "title": "Sagra del Castoncello",
-    "short_desc": "Degustazione del Castoncello, un'esclusiva e gustosa rivisitazione locale dei tipici casoncelli bergamaschi, tra buon cibo, musica e tradizione.",
-    "full_desc": "Inserita nella storica cornice della 'Festa del 12' o Festa del Voto, la Sagra del Castoncello è l'appuntamento imperdibile dell'estate a Monasterolo del Castello. Un'occasione per stare in compagnia e degustare il 'Castoncello', l'espressione locale dei tradizionali casoncelli delle nonne. La cena si svolge alla Casa della Gente e la serata prosegue poi in piazza con musica dal vivo, balli, intrattenimento e la classica e ricchissima Supertombola finale.",
-    "date": "12 Agosto 2026",
-    "time": "Ore 19:30",
-    "location": "Casa della Gente, Monasterolo del Castello (BG)",
-    "price": "Ingresso libero (consumazioni a pagamento)",
-    "website": "",
-    "image": "assets/img/Castoncello.jpg",
-    "gallery": [
-        ""
-    ],
-    "booking_link": "",
-    "featured": false,
-        "associations": ["Proloco", "Gruppo Castoncello"]
-    },
-    {
-        "id": "cena-perfetta",
-        "title": "La Cena Perfetta - Speciale \"Cena da Film\"",
-        "short_desc": "Vietato leccare lo schermo! I piatti ve li portiamo noi.",
-        "full_desc": "Un malavitoso dal cuore d'oro, una chef esplosiva e un ristorante che punta alla stella Michelin. Per la 10ª edizione, vi regaliamo un'esperienza sensoriale: i piatti principali che vedrete sullo schermo vi verranno serviti dal vivo in contemporanea! Altro che pop-corn, preparatevi a una vera serata \"stellata\".",
-        "date": "9 Luglio 2026",
-        "time": "Ore 20:45",
-        "location": "Ristorante Bolen, Monasterolo del Castello",
-        "price": "Menu Evento: € 35 | Menu Baby: € 20",
-        "website": "",
-        "image": "assets/img/cinema/CinemaXed.jpeg",
-        "gallery": [],
-        "booking_link": "https://www.linklinklink.it",
-        "featured": true,
-        "associations": ["GVM"],
-        "custom_link": "cinema-decima-edizione.html#cena-perfetta"
-    },
-    {
-        "id": "bella-bestia",
-        "title": "La Bella e la Bestia - Magia nel Castello",
-        "short_desc": "Bestia! Che bella location... Il Castello di Monasterolo!",
-        "full_desc": "Stia con noi! Una ragazza brillante, un principe scontroso e un maniero dove i candelabri cantano e le teiere parlano. Per questa speciale 10ª edizione, la magia prende vita... direttamente nel cortile del Castello di Monasterolo! Lasciate a casa i forconi e venite a vivere una fiaba sotto le stelle, in una vera location da favola.",
-        "date": "16 Luglio 2026",
-        "time": "Ore 21:00",
-        "location": "Castello di Monasterolo",
-        "price": "Ingresso libero",
-        "website": "",
-        "image": "assets/img/cinema/CinemaXed.jpeg",
-        "gallery": [],
-        "booking_link": "",
-        "featured": true,
-        "associations": ["GVM"],
-        "custom_link": "cinema-decima-edizione.html#bella-bestia"
-    },
-    {
-        "id": "lo-squalo",
-        "title": "Lo Squalo - Brividi in Riva al Lago",
-        "short_desc": "Quale miglior film da vedere in riva al lago di Endine?",
-        "full_desc": "Ci serve una barca più grande! Un enorme squalo bianco, tre cacciatori improvvisati e la colonna sonora più nota della storia del cinema. Per questa 10ª edizione vi facciamo venire i brividi: proietteremo questo capolavoro della suspense... proprio in riva al lago di Endine! Portate il coraggio e non avvicinatevi troppo all'acqua!",
-        "date": "23 Luglio 2026",
-        "time": "Ore 21:00",
-        "location": "Parco Biali, Riva Lago",
-        "price": "Ingresso libero",
-        "website": "",
-        "image": "assets/img/cinema/CinemaXed.jpeg",
-        "gallery": [],
-        "booking_link": "",
-        "featured": true,
-        "associations": ["GVM"],
-        "custom_link": "cinema-decima-edizione.html#lo-squalo"
-    },
         {
-        "id": "piazza-dance",
-        "title": "Piazza Dance",
-        "short_desc": "Musica, divertimento e sfiziosità",
-        "full_desc": "Una discoteca a cielo aperto, ad ingresso libero, per tutte le età! Un evento che fa vibrare i cuori di tutta la valle, tra balli, intrattenimento, temi speciali e sfiziose degustazioni",
-        "date": "25 Luglio 2026 | 15 Agosto 2026",
-        "time": "Ore 19:00 e 23:30",
-        "location": "Piazza IV Novembre, Monasterolo del Castello",
-        "price": "Ingresso libero, consumazioni a pagamento",
-        "image": "assets/img/Cannoni.jpg",
-        "booking_link": "",
-        "featured": false,
-        "associations": ["GVM"]
-
-    },
-    {
         "id": "follie-imperatore",
         "title": "Le Follie dell'Imperatore - Ritorno alle Origini",
         "short_desc": "Folle come il titolo, attuale come la prima volta!",
@@ -139,5 +15,71 @@
         "featured": true,
         "associations": ["GVM"],
         "custom_link": "cinema-decima-edizione.html#follie-imperatore"
+    },
+    {
+        "id": "visita-guidata-castello",
+        "title": "Visita al Castello",
+        "short_desc": "Visita guidata al Castello di Monasterolo. Prenotazione obbligatoria via WhatsApp al 388 9762514.",
+        "full_desc": "Un'occasione unica per immergersi nella storia e nel fascino del Castello di Monasterolo con la visita guidata.\n\nDate: Domenica 2, 9 e 23 Agosto\nInizio visita: ore 10:30 (Ritrovo all'ingresso del Castello 15 minuti prima, ore 10:15)\n\nPrenotazione obbligatoria solo via WhatsApp al 388 9762514.\n\nPrezzi:\n- Adulti: 4€\n- Bambini: 3€\n- Gratuito per bambini sotto i 10 anni",
+        "date": "Domenica 2 / 9 / 23 Agosto 2026",
+        "time": "Inizio visita ore 10:30 (Ritrovo 15 min prima)",
+        "location": "Castello di Monasterolo, Piazzetta Contessa V. Terni de Gregori, 1",
+        "price": "Adulti 4€ | Bambini 3€ | Gratuito < 10 anni",
+        "website": "",
+        "image": "assets/img/Castello.jpeg",
+        "gallery": [
+            "assets/img/Castello.jpeg"
+        ],
+        "booking_link": "https://wa.me/393889762514",
+        "featured": true,
+        "associations": ["Proloco"]
+    },
+    {
+        "id": "sagra-del-castoncello",
+        "title": "Sagra del Castoncello",
+        "short_desc": "Degustazione del Castoncello, un'esclusiva e gustosa rivisitazione locale dei tipici casoncelli bergamaschi, tra buon cibo, musica e tradizione.",
+        "full_desc": "Inserita nella storica cornice della 'Festa del 12' o Festa del Voto, la Sagra del Castoncello è l'appuntamento imperdibile dell'estate a Monasterolo del Castello. Un'occasione per stare in compagnia e degustare il 'Castoncello', l'espressione locale dei tradizionali casoncelli delle nonne. La cena si svolge alla Casa della Gente e la serata prosegue poi in piazza con musica dal vivo, balli, intrattenimento e la classica e ricchissima Supertombola finale.",
+        "date": "12 Agosto 2026",
+        "time": "Ore 19:30",
+        "location": "Casa della Gente, Monasterolo del Castello (BG)",
+        "price": "Ingresso libero (consumazioni a pagamento)",
+        "website": "",
+        "image": "assets/img/Castoncello.jpg",
+        "gallery": [],
+        "booking_link": "",
+        "featured": true,
+        "associations": ["Proloco", "Gruppo Castoncello"]
+    },
+    {
+        "id": "Mercatino",
+        "title": "Mercatino di Via Loj",
+        "short_desc": "Un viaggio tra tradizione, sapori e artigianato nel cuore di Monasterolo del Castello, dove ogni estate il borgo si anima di vita, colori e solidarietà.",
+        "full_desc": "Nel suggestivo centro storico di Monasterolo del Castello, affacciato sulle acque del Lago di Endine, prende vita ogni 14 agosto il tradizionale Mercatino di Via Loj.\n\nNato nel 1988 dall’impegno delle associazioni locali, questo evento è cresciuto negli anni fino a trasformarsi in una vera e propria festa di comunità, capace di richiamare migliaia di visitatori. Le vie del borgo si riempiono di espositori tra artigiani, hobbisti e produttori locali, offrendo un ricco percorso tra creazioni artistiche, oggetti fatti a mano e specialità gastronomiche.\n\nPasseggiando lungo Via Loj e tra i vicoli circostanti, i visitatori possono scoprire antiche tecniche artigianali, assaporare ricette della tradizione e vivere un’atmosfera autentica, fatta di profumi, musica e convivialità.\n\nParte integrante della rassegna estiva, il mercatino rappresenta anche un momento di valorizzazione del territorio e delle sue tradizioni.\n\nIl Mercatino di Via Loj non è solo un mercato, ma un’occasione per vivere il borgo e riscoprire il valore delle tradizioni locali in un’atmosfera calda e coinvolgente.",
+        "date": "14 Agosto 2026",
+        "time": "Dalle 12:00 alle 24:00",
+        "location": "Vie del Paese, Monasterolo del Castello",
+        "price": "Ingresso libero, consumazioni a pagamento",
+        "website": "https://www.vialoj.it/",
+        "image": "assets/img/Mercatino.jpg",
+        "gallery": [
+            "assets/img/Mercatino.jpg"
+        ],
+        "booking_link": "",
+        "featured": true,
+        "associations": ["Proloco"]
+    },
+    {
+        "id": "piazza-dance",
+        "title": "Piazza Dance",
+        "short_desc": "Musica, divertimento e sfiziosità",
+        "full_desc": "Una discoteca a cielo aperto, ad ingresso libero, per tutte le età! Un evento che fa vibrare i cuori di tutta la valle, tra balli, intrattenimento, temi speciali e sfiziose degustazioni.",
+        "date": "15 Agosto 2026",
+        "time": "Ore 19:00 e 23:30",
+        "location": "Piazza IV Novembre, Monasterolo del Castello",
+        "price": "Ingresso libero, consumazioni a pagamento",
+        "image": "assets/img/Cannoni.jpg",
+        "booking_link": "",
+        "featured": true,
+        "associations": ["GVM"]
     }
 ]

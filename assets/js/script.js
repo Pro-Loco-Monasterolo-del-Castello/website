@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Svuotiamo il contenuto segnaposto prima di costruire le card grafiche
                 eventsContainer.innerHTML = ''; 
                 
-                // Filtriamo per ottenere solo gli eventi da mettere in "vetrina", limitandoci a 3
-                const featuredEvents = events.filter(e => e.featured).slice(0, 3);
+                // Filtriamo per ottenere tutti gli eventi da mettere in "vetrina"
+                const featuredEvents = events.filter(e => e.featured);
 
                 // Nel caso la lista eventi nel JSON fosse vuota o tutti eliminati, mostriamo un avviso elegante
                 if (featuredEvents.length === 0) {
@@ -154,7 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 // -> COSTRUIAMO I BOTTONI DI AZIONE: Il link prenotazione comparirà unicamente se riempito sul file JSON
                 let actionsHTML = `<a href="index.html#eventi" class="btn btn-secondary">Torna agli Eventi</a>`;
                 if (event.booking_link) {
-                    actionsHTML += `<a href="${event.booking_link}" target="_blank" class="btn btn-primary">Prenota Ora</a>`;
+                    const isWa = event.booking_link.includes('wa.me') || event.booking_link.includes('whatsapp');
+                    const btnClass = isWa ? 'btn btn-whatsapp' : 'btn btn-primary';
+                    const btnText = isWa ? '<i class="fa-brands fa-whatsapp"></i> Prenota su WhatsApp' : 'Prenota Ora';
+                    actionsHTML += `<a href="${event.booking_link}" target="_blank" class="${btnClass}">${btnText}</a>`;
                 }
 
                 // -> COSTRUIAMO LA VISUALE MULTIMEDIALE (Carosello Vs. Singola Immagine)
