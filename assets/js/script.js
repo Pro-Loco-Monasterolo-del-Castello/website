@@ -57,14 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(events => {
                 // Svuotiamo il contenuto segnaposto prima di costruire le card grafiche
                 eventsContainer.innerHTML = ''; 
-<<<<<<< HEAD
+
                 // Filtriamo per ottenere tutti gli eventi in evidenza non ancora conclusi
                 const featuredEvents = events.filter(e => e.featured && !e.past);
-=======
-                
-                // Filtriamo per ottenere tutti gli eventi da mettere in "vetrina"
-                const featuredEvents = events.filter(e => e.featured);
->>>>>>> 1cca43a4d1c032b362b375c06bdd6e8871ec050b
 
                 // Nel caso la lista eventi nel JSON fosse vuota o tutti eliminati, mostriamo un avviso elegante
                 if (featuredEvents.length === 0) {
@@ -167,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (event.price) {    metaHTML += `<div class="meta-item"><i class="fa-solid fa-ticket"></i> ${event.price}</div>`; }
                 if (event.website) {  metaHTML += `<div class="meta-item"><i class="fa-solid fa-globe"></i> <a href="${event.website}" target="_blank" rel="noopener noreferrer" style="color:var(--primary-blue); text-decoration:none; font-weight:600;">Sito Web</a></div>`; }
 
-<<<<<<< HEAD
                 // -> COSTRUIAMO I BOTTONI DI AZIONE: Il link prenotazione comparirà unicamente se l'evento NON è passato ed ha un booking_link
                 let actionsHTML = `<a href="tutti-eventi.html" class="btn btn-secondary">Torna all'Archivio Eventi</a>`;
                 if (event.booking_link && !event.past) {
@@ -190,15 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     actionsHTML += `<a href="${event.booking_link}" ${targetAttr} class="${btnClass}">${btnText}</a>`;
                 } else if (event.past) {
                     actionsHTML += `<span class="btn btn-secondary" style="opacity: 0.7; cursor: default;"><i class="fa-solid fa-check-circle"></i> Evento Concluso</span>`;
-=======
-                // -> COSTRUIAMO I BOTTONI DI AZIONE: Il link prenotazione comparirà unicamente se riempito sul file JSON
-                let actionsHTML = `<a href="index.html#eventi" class="btn btn-secondary">Torna agli Eventi</a>`;
-                if (event.booking_link) {
-                    const isWa = event.booking_link.includes('wa.me') || event.booking_link.includes('whatsapp');
-                    const btnClass = isWa ? 'btn btn-whatsapp' : 'btn btn-primary';
-                    const btnText = isWa ? '<i class="fa-brands fa-whatsapp"></i> Prenota su WhatsApp' : 'Prenota Ora';
-                    actionsHTML += `<a href="${event.booking_link}" target="_blank" class="${btnClass}">${btnText}</a>`;
->>>>>>> 1cca43a4d1c032b362b375c06bdd6e8871ec050b
                 }
 
                 // -> COSTRUIAMO LA VISUALE MULTIMEDIALE (Carosello Vs. Singola Immagine)
