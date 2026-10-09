@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visite al Castello di Monasterolo | Proloco Monasterolo</title>
+    <meta name="description" content="Visite guidate al Castello di Monasterolo del Castello e giardino in autunno. Scopri la storia del borgo sul Lago di Endine. Prenotazione obbligatoria via WhatsApp.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Elegant Historical Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --castle-dark: #09171e;
+            --castle-teal: #0f2d3b;
+            --castle-accent: #d4a359;
+            --castle-accent-glow: rgba(212, 163, 89, 0.4);
+            --castle-autunno: #d9531e;
+            --castle-light: #f5f7fa;
+            --font-serif: 'Cinzel', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        body.castle-theme {
+            background-color: var(--castle-dark);
+            color: #ffffff;
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Navbar Dark Override --- */
+        .castle-theme .navbar {
+            background-color: rgba(9, 23, 30, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 163, 89, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .castle-theme .navbar .logo-group .giovani-link {
+            color: var(--castle-accent);
+            border-left-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .castle-theme .nav-links a {
+            color: #ffffff;
+        }
+
+        .castle-theme .nav-links a:hover {
+            color: var(--castle-accent);
+            text-shadow: 0 0 10px var(--castle-accent-glow);
+        }
+
+        /* --- Hero Section --- */
+        .castle-hero {
+            position: relative;
+            padding: 170px 0 100px;
+            background: linear-gradient(180deg, rgba(9, 23, 30, 0.7) 0%, var(--castle-dark) 100%), url('assets/img/Castello.jpeg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .castle-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(15, 45, 59, 0.85) 0%, rgba(9, 23, 30, 0.95) 85%);
+        }
+
+        .castle-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .castle-badge-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(212, 163, 89, 0.15);
+            border: 1px solid var(--castle-accent);
+            color: var(--castle-accent);
+            font-weight: 700;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px rgba(212, 163, 89, 0.2);
+        }
+
+        .castle-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--castle-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .castle-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: #d0dbe0;
+            max-width: 800px;
+            margin: 0 auto 35px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .castle-meta-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .castle-pill {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+        }
+
+        .castle-pill i {
+            color: var(--castle-accent);
+        }
+
+        /* --- FEATURED UPCOMING EVENT CARD --- */
+        .featured-visit-section {
+            padding: 60px 0 90px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .visit-event-card {
+            background: linear-gradient(135deg, #133848 0%, #0d2531 100%);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid var(--castle-accent);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(212, 163, 89, 0.15);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .visit-event-card {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        .visit-autunno-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--castle-autunno), #b53809);
+            color: white;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .visit-card-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: #ffffff;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .visit-card-desc {
+            font-size: 1.1rem;
+            color: #d6e2e8;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .visit-details-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .visit-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.05rem;
+            color: #ffffff;
+        }
+
+        .visit-detail-item i {
+            color: var(--castle-accent);
+            font-size: 1.2rem;
+            width: 24px;
+        }
+
+        .price-tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            border: 1px dashed rgba(212, 163, 89, 0.3);
+        }
+
+        .price-item {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--castle-accent);
+        }
+
+        .price-item span {
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        .visit-booking-box {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .visit-booking-box h3 {
+            font-family: var(--font-serif);
+            color: var(--castle-accent);
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .visit-booking-box p {
+            color: #b0c2cb;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-castle-wa {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: var(--whatsapp-green);
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            padding: 15px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-castle-wa:hover {
+            background: var(--whatsapp-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* --- HIGHLIGHTS GRID --- */
+        .highlights-section {
+            padding: 90px 0;
+            background: rgba(255, 255, 255, 0.015);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section-castle-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-castle-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .section-castle-header p {
+            color: #a3b8c2;
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .highlight-card {
+            background: var(--castle-teal);
+            border-radius: 18px;
+            padding: 35px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--castle-accent);
+            box-shadow: 0 12px 30px rgba(212, 163, 89, 0.2);
+        }
+
+        .highlight-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            background: rgba(212, 163, 89, 0.15);
+            border: 1px solid var(--castle-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--castle-accent);
+            margin-bottom: 22px;
+        }
+
+        .highlight-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .highlight-card p {
+            color: #b7cbcd;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        /* --- GALLERY SECTION --- */
+        .castle-gallery-section {
+            padding: 90px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* --- INFO & FAQ SECTION --- */
+        .info-faq-section {
+            padding: 90px 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .faq-card {
+            background: rgba(15, 45, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .faq-card h4 {
+            color: var(--castle-accent);
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-card p {
+            color: #bdcdd4;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        /* Footer override */
+        .castle-theme footer {
+            background-color: #040b0e;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="castle-theme">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo-group">
+                <a href="index.html" class="logo">
+                    <img src="assets/img/logo-proloco.png" alt="Logo Proloco Monasterolo del Castello">
+                </a>
+                <a href="giovani-volontari.html" class="giovani-link">Giovani Volontari</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#scopri">Il Borgo</a></li>
+                    <li><a href="tutti-eventi.html">Eventi</a></li>
+                    <li><a href="cinema-decima-edizione.html">Cinema</a></li>
+                    <li><a href="index.html#info-point">Info Point</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="castle-hero">
+        <div class="castle-hero-overlay"></div>
+        <div class="container castle-hero-content">
+            <div class="castle-badge-top">
+                <i class="fa-solid fa-landmark"></i> Dimora Storica & Giardino Botanico
+            </div>
+            <h1 class="castle-title">VISITA AL CASTELLO E GIARDINO</h1>
+            <p class="castle-subtitle">
+                Un'esperienza guidata esclusiva per scoprire il fascino secolare del Castello di Monasterolo e la meraviglia del suo giardino fiorito affacciato sulle acque del Lago di Endine.
+            </p>
+
+            <div class="castle-meta-bar">
+                <div class="castle-pill"><i class="fa-solid fa-location-dot"></i> Monasterolo del Castello (BG)</div>
+                <div class="castle-pill"><i class="fa-brands fa-whatsapp"></i> Prenotazione Obbligatoria via WhatsApp</div>
+                <div class="castle-pill"><i class="fa-solid fa-users"></i> Organizzato da Proloco Monasterolo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPCOMING VISITS FEATURED CARD -->
+    <section class="featured-visit-section">
+        <div class="container">
+            <div class="visit-event-card">
+                <div class="visit-card-left">
+                    <div class="visit-autunno-badge">
+                        <i class="fa-solid fa-leaf"></i> Edizione Autunnale 2026
+                    </div>
+                    <h2 class="visit-card-title">Visita al Castello e Giardino in Autunno</h2>
+                    <p class="visit-card-desc">
+                        Una visita guidata suggestiva per scoprire i segreti della storia medievale del borgo e ammirare il giardino del Castello avvolto nei caldi colori e scenari dell'autunno.
+                    </p>
+
+                    <div class="visit-details-list">
+                        <div class="visit-detail-item">
+                            <i class="fa-regular fa-calendar-days"></i>
+                            <span><strong>Data:</strong> Domenica 11 Ottobre 2026</span>
+                        </div>
+                        <div class="visit-detail-item">
+                            <i class="fa-regular fa-clock"></i>
+                            <span><strong>Orario:</strong> Inizio visita ore 10:30 (Ritrovo all'ingresso del Castello ore 10:15)</span>
+                        </div>
+                        <div class="visit-detail-item">
+                            <i class="fa-solid fa-map-pin"></i>
+                            <span><strong>Ritrovo:</strong> Piazzetta Contessa V. Terni de Gregori, 1 - Monasterolo d.C.</span>
+                        </div>
+                    </div>
+
+                    <div class="price-tag-group">
+                        <div class="price-item"><i class="fa-solid fa-ticket"></i> Adulti: <span>4€</span></div>
+                        <div class="price-item"><i class="fa-solid fa-child"></i> Bambini: <span>3€</span></div>
+                        <div class="price-item"><i class="fa-solid fa-gift"></i> Sotto i 10 anni: <span>Gratuito</span></div>
+                    </div>
+                </div>
+
+                <div class="visit-booking-box">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 3.5rem; color: var(--whatsapp-green); margin-bottom: 15px;"></i>
+                    <h3>Prenota il tuo posto</h3>
+                    <p>La prenotazione è <strong>obbligatoria</strong> per garantire un tour guidato fluido ed esclusivo.</p>
+                    
+                    <a href="https://wa.me/393889762514?text=Buongiorno,%20vorrei%20prenotare%20la%20visita%20al%20Castello%20per%20Domenica%2011%20Ottobre" target="_blank" class="btn-castle-wa">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Prenota via WhatsApp (388 9762514)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS SECTION -->
+    <section class="highlights-section">
+        <div class="container">
+            <div class="section-castle-header">
+                <h2>Cosa Scoprirai durante la Visita</h2>
+                <p>Un percorso immersivo tra arte, natura e racconti d'altri tempi</p>
+            </div>
+
+            <div class="highlights-grid">
+                <!-- Card 1 -->
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="fa-solid fa-chess-rook"></i></div>
+                    <h3>L'Architettura & le Sale Interni</h3>
+                    <p>Esplora l'imponente struttura fortificata, la torre storica, la piazzetta e le storiche sale interne arricchite da soffitti in legno, affreschi e decorazioni d'epoca.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="fa-solid fa-water-ladder"></i></div>
+                    <h3>Il Parco e la Piscina nel Giardino</h3>
+                    <p>Passeggia nel parco verde del Castello, scoprendo l'area con la suggestiva piscina incastonata all'interno della recinzione ma immersa nel primo pezzo di giardino.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+                    <h3>Panorama dall'Alto sul Lago</h3>
+                    <p>Godi della vista dall'alto sul Castello di Monasterolo e sul meraviglioso specchio d'acqua del Lago di Endine circondato dalle colline autunnali.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+                    <h3>Accoglienza Proloco</h3>
+                    <p>Le guide e i volontari della Proloco ti accompagneranno passo dopo passo per garantirti un'esperienza culturale ricca ed accessibile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="castle-gallery-section">
+        <div class="container">
+            <div class="section-castle-header">
+                <h2>Scorci del Castello</h2>
+                <p>Una piccola anteprima della bellezza che ti aspetta a Monasterolo del Castello</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/img/Castello_alto.webp" alt="Vista dall'alto del Castello di Monasterolo e del Lago">
+                    <div class="gallery-caption">Vista dall'alto del Castello e del Lago di Endine</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/img/Stanza.jpg" alt="Sale interne del Castello di Monasterolo">
+                    <div class="gallery-caption">Le storiche ed eleganti sale interne</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/img/PiscinaCastello.jpeg" alt="Scorcio della piscina nei giardini del Castello">
+                    <div class="gallery-caption">La piscina nei giardini del Castello</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/img/Castello.jpeg" alt="Ingresso Castello di Monasterolo">
+                    <div class="gallery-caption">L'ingresso del Castello ed il parco botanico</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO & FAQ SECTION -->
+    <section class="info-faq-section">
+        <div class="container">
+            <div class="section-castle-header">
+                <h2>Informazioni Utili per i Visitatori</h2>
+                <p>Tutto quello che c'è da sapere prima di venire in visita</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h4><i class="fa-solid fa-circle-question"></i> È obbligatorio prenotare?</h4>
+                    <p>Sì, la prenotazione è obbligatoria per permetterci di organizzare i gruppi di visita al meglio. Puoi prenotare inviando un messaggio WhatsApp al numero <strong>388 9762514</strong>.</p>
+                </div>
+
+                <div class="faq-card">
+                    <h4><i class="fa-solid fa-square-parking"></i> Dove posso parcheggiare?</h4>
+                    <p>Sono disponibili comodi parcheggi adibiti ai visitatori del castello, nelle immediate vicinanze. Inoltre il castello è velocemente raggiungibile a piedi dal lungo lago, essendo anche a meno di 10 minuti dal parco Biali.</p>
+                </div>
+
+                <div class="faq-card">
+                    <h4><i class="fa-solid fa-person-walking-luggage"></i> Come avviene il ritrovo?</h4>
+                    <p>Si consiglia di arrivare con 15 minuti di anticipo (ore 10:15) direttamente davanti all'ingresso del Castello in Piazzetta Contessa V. Terni de Gregori, 1.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="tutti-eventi.html" class="btn btn-secondary" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">
+                    <i class="fa-solid fa-arrow-left"></i> Torna a Tutti gli Eventi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contatti">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Proloco Monasterolo del Castello</h3>
+                <p>Valorizziamo il patrimonio storico, culturale e naturale del nostro territorio.</p>
+            </div>
+            <div class="footer-social">
+                <p>Rimani aggiornato:</p>
+                <a href="https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T" target="_blank" class="social-link wa-link">
+                    <i class="fa-brands fa-whatsapp"></i> Iscriviti al Canale WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Proloco Monasterolo del Castello. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

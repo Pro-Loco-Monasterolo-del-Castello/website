@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piazza Dance 2026 | Giovani Volontari Monasterolo</title>
+    <meta name="description" content="Piazza Dance a Monasterolo del Castello - Discoteca a cielo aperto con Flavio DJ, aperitivi Bar X e Dama Bianca, la cena GVM e la grande novità dello Strinù Blasfemo!">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Dynamic Party Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --party-dark: #0b0914;
+            --party-card: #151124;
+            --party-pink: #ff2a85;
+            --party-purple: #8a2be2;
+            --party-cyan: #00f2fe;
+            --party-yellow: #ffeb3b;
+            --party-orange: #ff6b00;
+            --font-pop: 'Bangers', cursive;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        body.party-theme {
+            background-color: var(--party-dark);
+            color: #ffffff;
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Navbar Dark Override --- */
+        .party-theme .navbar {
+            background-color: rgba(11, 9, 20, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 42, 133, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .party-theme .navbar .logo-group .giovani-link {
+            color: var(--party-pink);
+            border-left-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .party-theme .nav-links a {
+            color: #ffffff;
+        }
+
+        .party-theme .nav-links a:hover {
+            color: var(--party-cyan);
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+        }
+
+        /* --- Party Hero Section --- */
+        .party-hero {
+            position: relative;
+            padding: 170px 0 90px;
+            background: radial-gradient(circle at 50% 20%, #2e1040 0%, var(--party-dark) 75%);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .party-hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 42, 133, 0.25) 0%, rgba(0,0,0,0) 70%);
+            filter: blur(50px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-glow-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--party-pink), var(--party-purple));
+            color: white;
+            font-weight: 800;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 0 20px rgba(255, 42, 133, 0.5);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .party-title {
+            font-family: var(--font-pop);
+            font-size: clamp(3.2rem, 8vw, 6rem);
+            letter-spacing: 3px;
+            line-height: 1;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--party-cyan) 50%, var(--party-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            position: relative;
+            z-index: 1;
+        }
+
+        .party-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: #d1c9e8;
+            max-width: 750px;
+            margin: 0 auto 35px;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        .party-meta-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .party-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+        }
+
+        .party-pill i {
+            color: var(--party-pink);
+        }
+
+        /* --- SMASH! STRINÙ BLASFEMO FEATURED SECTION --- */
+        .strinu-section {
+            padding: 90px 0;
+            background: linear-gradient(180deg, var(--party-dark) 0%, #170d24 50%, var(--party-dark) 100%);
+            position: relative;
+        }
+
+        .popart-container {
+            background: linear-gradient(135deg, #ff007f 0%, #7b2cbf 50%, #12092b 100%);
+            border-radius: 24px;
+            padding: 45px;
+            border: 3px solid var(--party-yellow);
+            box-shadow: 0 15px 40px rgba(255, 0, 127, 0.3), inset 0 0 30px rgba(255, 235, 59, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .popart-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-family: var(--font-pop);
+            background: var(--party-yellow);
+            color: #000;
+            font-size: 1.8rem;
+            padding: 5px 20px;
+            transform: rotate(6deg);
+            border-radius: 8px;
+            box-shadow: 3px 3px 0px #000;
+            z-index: 2;
+        }
+
+        .strinu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .strinu-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+        }
+
+        .smash-title-box {
+            margin-bottom: 20px;
+        }
+
+        .smash-tag {
+            font-family: var(--font-pop);
+            font-size: 2.2rem;
+            color: var(--party-yellow);
+            text-shadow: 3px 3px 0 #000;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .smash-main-title {
+            font-family: var(--font-pop);
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            color: #ffffff;
+            text-shadow: 4px 4px 0 #000;
+            line-height: 0.95;
+            margin-bottom: 15px;
+        }
+
+        .smash-desc {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #f1f0f7;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .ingredients-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .ing-tag {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--party-yellow);
+            color: var(--party-yellow);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .strinu-card-box {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 16px;
+            padding: 30px;
+            border: 2px dashed rgba(255, 235, 59, 0.5);
+            text-align: center;
+        }
+
+        .strinu-card-box h4 {
+            font-family: var(--font-pop);
+            font-size: 1.8rem;
+            color: var(--party-cyan);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* --- LINEUP & PARTNERS SECTION --- */
+        .lineup-section {
+            padding: 90px 0;
+        }
+
+        .section-party-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-party-header h2 {
+            font-family: var(--font-pop);
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            letter-spacing: 2px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .section-party-header p {
+            color: #b0a8cd;
+            font-size: 1.15rem;
+        }
+
+        .lineup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .lineup-card {
+            background: var(--party-card);
+            border-radius: 16px;
+            padding: 35px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .lineup-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--party-pink);
+            box-shadow: 0 10px 30px rgba(255, 42, 133, 0.25);
+        }
+
+        .lineup-icon {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--party-pink), var(--party-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(255, 42, 133, 0.4);
+        }
+
+        .lineup-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .lineup-role {
+            color: var(--party-cyan);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .lineup-card p {
+            color: #a59ec1;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        /* --- 4 DATES SCHEDULE --- */
+        .dates-section {
+            padding: 90px 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .date-card {
+            background: linear-gradient(145deg, #1c1630 0%, #120e20 100%);
+            border-radius: 16px;
+            padding: 30px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .date-card:hover {
+            transform: scale(1.03);
+            border-color: var(--party-cyan);
+            box-shadow: 0 8px 25px rgba(0, 242, 254, 0.2);
+        }
+
+        .date-number {
+            font-family: var(--font-pop);
+            font-size: 3.5rem;
+            color: var(--party-yellow);
+            line-height: 1;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .date-month {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .date-tag {
+            display: inline-block;
+            background: rgba(0, 242, 254, 0.12);
+            color: var(--party-cyan);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+
+        /* --- CTA BOX --- */
+        .party-cta-box {
+            background: linear-gradient(135deg, #2b104c 0%, #15092b 100%);
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            margin-top: 70px;
+            border: 1px solid rgba(255, 42, 133, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .party-cta-box h2 {
+            font-family: var(--font-pop);
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .party-cta-box p {
+            color: #cbbfe8;
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-party-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--whatsapp-green);
+            color: white;
+            font-weight: 800;
+            font-size: 1.15rem;
+            padding: 16px 36px;
+            border-radius: 35px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-party-wa:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+            background: var(--whatsapp-dark);
+        }
+
+        /* Party theme Footer override */
+        .party-theme footer {
+            background-color: #05040a;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="party-theme">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo-group">
+                <a href="index.html" class="logo">
+                    <img src="assets/img/logo-proloco.png" alt="Logo Proloco Monasterolo del Castello">
+                </a>
+                <a href="giovani-volontari.html" class="giovani-link">Giovani Volontari</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#scopri">Il Borgo</a></li>
+                    <li><a href="tutti-eventi.html">Eventi</a></li>
+                    <li><a href="cinema-decima-edizione.html">Cinema</a></li>
+                    <li><a href="index.html#info-point">Info Point</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="party-hero">
+        <div class="container">
+            <div class="hero-glow-badge">
+                <i class="fa-solid fa-compact-disc fa-spin" style="--fa-animation-duration: 4s;"></i> Rassegna Estiva GVM 2026
+            </div>
+            <h1 class="party-title">PIAZZA DANCE</h1>
+            <p class="party-subtitle">
+                La discoteca a cielo aperto che fa vibrare la valle! Musica con Flavio DJ, aperitivi, le grigliate GVM e lo spettacolare Strinù Blasfemo.
+            </p>
+
+            <div class="party-meta-bar">
+                <div class="party-pill"><i class="fa-solid fa-location-dot"></i> Piazza IV Novembre, Monasterolo (BG)</div>
+                <div class="party-pill"><i class="fa-solid fa-ticket"></i> Ingresso Libero per tutte le età</div>
+                <div class="party-pill"><i class="fa-solid fa-clock"></i> Dalle 19:00 fino alle 23:30</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SMASH STRINÙ BLASFEMO HIGHLIGHT SECTION -->
+    <section class="strinu-section">
+        <div class="container">
+            <div class="popart-container">
+                <div class="popart-badge">NOVITÀ 2026!</div>
+                <div class="strinu-grid">
+                    <div class="strinu-text-col">
+                        <div class="smash-title-box">
+                            <span class="smash-tag">💥 SMASH!</span>
+                            <h2 class="smash-main-title">STRINÙ BLASFEMO</h2>
+                        </div>
+                        <p class="smash-desc">
+                            Il nuovo irresistibile modo di mangiare la salamella! Una golosa rivisitazione in formato street food targata <strong>Plaza Dance</strong>: Smash Salamella, Cheddar filante, Senape, Cipolla croccante, Cetriolo e Lattuga fresca arrotolati in un roll di pura bontà!
+                        </p>
+
+                        <div class="ingredients-tags">
+                            <span class="ing-tag"><i class="fa-solid fa-fire"></i> Smash Salamella</span>
+                            <span class="ing-tag"><i class="fa-solid fa-cheese"></i> Cheddar Fuso</span>
+                            <span class="ing-tag"><i class="fa-solid fa-pepper-hot"></i> Senape</span>
+                            <span class="ing-tag"><i class="fa-solid fa-stroopwafel"></i> Cipolla Croccante</span>
+                            <span class="ing-tag"><i class="fa-solid fa-leaf"></i> Cetriolo & Lattuga</span>
+                            <span class="ing-tag" style="background:var(--party-yellow); color:#000;"><i class="fa-solid fa-drumstick-bite"></i> In Roll di Bontà</span>
+                        </div>
+                    </div>
+
+                    <div class="strinu-card-box">
+                        <i class="fa-solid fa-burger" style="font-size: 3.5rem; color: var(--party-yellow); margin-bottom: 15px;"></i>
+                        <h4>Provalo al Plaza Dance!</h4>
+                        <p style="color: #e2daf5; font-size: 0.95rem;">Disponibile in esclusiva presso lo stand gastronomico GVM in Piazza IV Novembre durante tutte le serate!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LINEUP & TEAM SECTION -->
+    <section class="lineup-section">
+        <div class="container">
+            <div class="section-party-header">
+                <h2>I Protagonisti del Piazza Dance</h2>
+                <p>La squadra vincente che trasforma Piazza IV Novembre nel centro del divertimento</p>
+            </div>
+
+            <div class="lineup-grid">
+                <!-- Card 1: DJ Set -->
+                <div class="lineup-card">
+                    <div class="lineup-icon"><i class="fa-solid fa-sliders"></i></div>
+                    <h3>Flavio DJ</h3>
+                    <div class="lineup-role">Musica & DJ Set</div>
+                    <p>Show e sound travolgente alla consolle! Le migliori hit dance, commerciali, anni 80/90/2000 e tormentoni estivi per ballare sotto le stelle.</p>
+                </div>
+
+                <!-- Card 2: Aperitivi & Drinks -->
+                <div class="lineup-card">
+                    <div class="lineup-icon" style="background: linear-gradient(135deg, #00f2fe, #4facfe);"><i class="fa-solid fa-martini-glass-citrus"></i></div>
+                    <h3>Bar X & Dama Bianca</h3>
+                    <div class="lineup-role">Aperitivi & Apericena</div>
+                    <p>Cocktail d'autore, birre alla spina, aperitivi freschi e ricchi apericena preparati con cura dai rinomati locali del borgo.</p>
+                </div>
+
+                <!-- Card 3: Cucine GVM -->
+                <div class="lineup-card">
+                    <div class="lineup-icon" style="background: linear-gradient(135deg, #ff6b00, #ff8e53);"><i class="fa-solid fa-utensils"></i></div>
+                    <h3>Gruppo GVM</h3>
+                    <div class="lineup-role">Cena & Grigliata</div>
+                    <p>I Giovani Volontari Monasterolo ai fornelli: grigliate calde, patatine, il leggendario Strinù Blasfemo e tanta energia per servire la comunità.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 DATES OF 2026 SECTION -->
+    <section class="dates-section">
+        <div class="container">
+            <div class="section-party-header">
+                <h2>Le 4 Serate dell'Edizione 2026</h2>
+                <p>Rivedi i quattro appuntamenti estivi in Piazza IV Novembre</p>
+            </div>
+
+            <div class="dates-grid">
+                <div class="date-card">
+                    <div class="date-number">23</div>
+                    <div class="date-month">Maggio</div>
+                    <span class="date-tag"><i class="fa-solid fa-star"></i> Opening Party & Debutto Strinù</span>
+                </div>
+
+                <div class="date-card">
+                    <div class="date-number">20</div>
+                    <div class="date-month">Giugno</div>
+                    <span class="date-tag"><i class="fa-solid fa-sun"></i> Solstizio Dance</span>
+                </div>
+
+                <div class="date-card">
+                    <div class="date-number">25</div>
+                    <div class="date-month">Luglio</div>
+                    <span class="date-tag"><i class="fa-solid fa-fire"></i> Midsummer Hits</span>
+                </div>
+
+                <div class="date-card">
+                    <div class="date-number">15</div>
+                    <div class="date-month">Agosto</div>
+                    <span class="date-tag"><i class="fa-solid fa-crown"></i> Gran Finale Ferragosto</span>
+                </div>
+            </div>
+
+            <!-- CTA Box -->
+            <div class="party-cta-box">
+                <h2>Non perderti i prossimi eventi GVM!</h2>
+                <p>Iscriviti al canale ufficiale WhatsApp della Proloco e dei Giovani Volontari per scoprire in anteprima le date e le sorprese delle prossime edizioni.</p>
+                <a href="https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T" target="_blank" class="btn-party-wa">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Unisciti al Canale WhatsApp
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="tutti-eventi.html" class="btn btn-secondary" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">
+                    <i class="fa-solid fa-arrow-left"></i> Torna a Tutti gli Eventi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contatti">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Proloco & Giovani Volontari Monasterolo</h3>
+                <p>Organizziamo eventi per animare il nostro meraviglioso borgo sul Lago di Endine.</p>
+            </div>
+            <div class="footer-social">
+                <p>Rimani aggiornato:</p>
+                <a href="https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T" target="_blank" class="social-link wa-link">
+                    <i class="fa-brands fa-whatsapp"></i> Iscriviti al Canale WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Proloco Monasterolo del Castello. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

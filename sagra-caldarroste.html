@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagra delle Caldarroste 2026 | Proloco Monasterolo del Castello</title>
+    <meta name="description" content="Sagra delle Caldarroste e dei Prodotti Tipici a Monasterolo del Castello - 50 anni di storia! Sabato 24 e Domenica 25 Ottobre con Flavio DJ, piatti tipici e animazione bimbi.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Festive Autumn Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --autumn-dark: #120b08;
+            --autumn-card: #1f130d;
+            --autumn-amber: #d97706;
+            --autumn-gold: #f59e0b;
+            --autumn-red: #b91c1c;
+            --autumn-warm: #fff7ed;
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        body.autumn-theme {
+            background-color: var(--autumn-dark);
+            color: #ffffff;
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Navbar Dark Override --- */
+        .autumn-theme .navbar {
+            background-color: rgba(18, 11, 8, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(217, 119, 6, 0.25);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .autumn-theme .navbar .logo-group .giovani-link {
+            color: var(--autumn-gold);
+            border-left-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .autumn-theme .nav-links a {
+            color: #ffffff;
+        }
+
+        .autumn-theme .nav-links a:hover {
+            color: var(--autumn-gold);
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+
+        /* --- Hero Section --- */
+        .autumn-hero {
+            position: relative;
+            padding: 170px 0 100px;
+            background: linear-gradient(180deg, rgba(18, 11, 8, 0.75) 0%, var(--autumn-dark) 100%), url('assets/img/Caldarroste.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .autumn-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(31, 19, 13, 0.85) 0%, rgba(18, 11, 8, 0.96) 85%);
+        }
+
+        .autumn-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .heritage-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.2), rgba(185, 28, 28, 0.2));
+            border: 1px solid var(--autumn-amber);
+            color: var(--autumn-gold);
+            font-weight: 800;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+        }
+
+        .autumn-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 6vw, 4.8rem);
+            font-weight: 900;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--autumn-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .autumn-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+            color: #e5d5c5;
+            max-width: 800px;
+            margin: 0 auto 35px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .autumn-meta-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .autumn-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+        }
+
+        .autumn-pill i {
+            color: var(--autumn-gold);
+        }
+
+        /* --- PROGRAMME DAYS SECTION --- */
+        .program-section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        .section-autumn-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-autumn-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .section-autumn-header p {
+            color: #c4b5a5;
+            font-size: 1.15rem;
+        }
+
+        .days-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        @media (min-width: 992px) {
+            .days-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .day-card {
+            background: var(--autumn-card);
+            border-radius: 22px;
+            padding: 35px;
+            border: 1px solid rgba(217, 119, 6, 0.25);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--autumn-gold);
+        }
+
+        .day-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .day-badge-tag {
+            background: linear-gradient(135deg, var(--autumn-amber), var(--autumn-red));
+            color: white;
+            font-weight: 800;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .day-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-top: 8px;
+        }
+
+        .day-time-loc {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.95rem;
+            color: var(--autumn-gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .menu-list-box {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px dashed rgba(245, 158, 11, 0.3);
+            margin-bottom: 25px;
+        }
+
+        .menu-list-box h4 {
+            font-size: 1.1rem;
+            color: var(--autumn-gold);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-list-box ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .menu-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.92rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .day-extra-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #d1c4b7;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .day-extra-info i {
+            color: var(--autumn-gold);
+            font-size: 1.1rem;
+        }
+
+        /* --- SPECIALTIES GRID --- */
+        .specialties-section {
+            padding: 90px 0;
+            background: rgba(255, 255, 255, 0.015);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .spec-card {
+            background: rgba(31, 19, 13, 0.7);
+            border-radius: 18px;
+            padding: 30px 22px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--autumn-amber);
+            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.2);
+        }
+
+        .spec-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--autumn-amber), var(--autumn-red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(217, 119, 6, 0.4);
+        }
+
+        .spec-card h3 {
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-family: var(--font-display);
+        }
+
+        .spec-card p {
+            color: #b8aba0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- 50 YEARS HISTORY BANNER --- */
+        .history-box {
+            background: linear-gradient(135deg, #2e150a 0%, #170a05 100%);
+            border-radius: 24px;
+            padding: 45px;
+            border: 1px solid var(--autumn-amber);
+            margin-top: 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        }
+
+        .history-number {
+            font-family: var(--font-display);
+            font-size: clamp(3.5rem, 7vw, 5.5rem);
+            color: var(--autumn-gold);
+            line-height: 1;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .history-box h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .history-box p {
+            color: #ded1c5;
+            font-size: 1.1rem;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Footer override */
+        .autumn-theme footer {
+            background-color: #080403;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="autumn-theme">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo-group">
+                <a href="index.html" class="logo">
+                    <img src="assets/img/logo-proloco.png" alt="Logo Proloco Monasterolo del Castello">
+                </a>
+                <a href="giovani-volontari.html" class="giovani-link">Giovani Volontari</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#scopri">Il Borgo</a></li>
+                    <li><a href="tutti-eventi.html">Eventi</a></li>
+                    <li><a href="cinema-decima-edizione.html">Cinema</a></li>
+                    <li><a href="index.html#info-point">Info Point</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="autumn-hero">
+        <div class="autumn-hero-overlay"></div>
+        <div class="container autumn-hero-content">
+            <div class="heritage-badge">
+                <i class="fa-solid fa-fire"></i> Tradizione Storica della Proloco • Oltre 50 Anni di Storia
+            </div>
+            <h1 class="autumn-title">SAGRA DELLE CALDARROSTE E DEI PRODOTTI TIPICI</h1>
+            <p class="autumn-subtitle">
+                Monasterolo del Castello • Edizione 2026. Due giornate di festa, caldarroste fumanti, piaceri della tavola, musica dal vivo e divertimento per tutta la famiglia.
+            </p>
+
+            <div class="autumn-meta-bar">
+                <div class="autumn-pill"><i class="fa-regular fa-calendar-days"></i> Sabato 24 e Domenica 25 Ottobre 2026</div>
+                <div class="autumn-pill"><i class="fa-solid fa-location-dot"></i> Piazza IV Novembre & Casa della Gente</div>
+                <div class="autumn-pill"><i class="fa-solid fa-ticket"></i> Ingresso Libero</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2 DAYS PROGRAMME SECTION -->
+    <section class="program-section">
+        <div class="container">
+            <div class="section-autumn-header">
+                <h2>Programma del Weekend</h2>
+                <p>Scopri gli appuntamenti e le degustazioni previste per sabato e domenica</p>
+            </div>
+
+            <div class="days-grid">
+                <!-- Day 1: Sabato -->
+                <div class="day-card">
+                    <div class="day-card-header">
+                        <div>
+                            <span class="day-badge-tag">Sabato 24 Ottobre</span>
+                            <h3 class="day-title">Anteprima della Sagra</h3>
+                        </div>
+                        <i class="fa-solid fa-moon" style="font-size: 2.2rem; color: var(--autumn-gold);"></i>
+                    </div>
+
+                    <div class="day-time-loc">
+                        <span><i class="fa-solid fa-location-dot"></i> Piazza IV Novembre</span>
+                        <span><i class="fa-regular fa-clock"></i> Dalle 18:00 fino alle 23:00</span>
+                    </div>
+
+                    <div class="menu-list-box">
+                        <h4><i class="fa-solid fa-utensils"></i> Menù Tradizionale & Specialità</h4>
+                        <ul>
+                            <li class="menu-pill">Caldarroste Fumanti</li>
+                            <li class="menu-pill">Frittelle di Mele</li>
+                            <li class="menu-pill">Pane e Strinù</li>
+                            <li class="menu-pill">Polenta Cunsada (Zola o Ragù)</li>
+                            <li class="menu-pill">Trippa con Verdure</li>
+                        </ul>
+                    </div>
+
+                    <div class="day-extra-info">
+                        <i class="fa-solid fa-compact-disc"></i>
+                        <span><strong>Intrattenimento:</strong> DJ set dal vivo con <strong>Flavio DJ</strong>. Beverage e servizio bar in collaborazione con <strong>Bar La Dama Bianca</strong> e <strong>Bar X</strong>.</span>
+                    </div>
+                </div>
+
+                <!-- Day 2: Domenica -->
+                <div class="day-card">
+                    <div class="day-card-header">
+                        <div>
+                            <span class="day-badge-tag" style="background: linear-gradient(135deg, #f59e0b, #d97706);">Domenica 25 Ottobre</span>
+                            <h3 class="day-title">La Grande Festa in Famiglia</h3>
+                        </div>
+                        <i class="fa-solid fa-sun" style="font-size: 2.2rem; color: var(--autumn-gold);"></i>
+                    </div>
+
+                    <div class="day-time-loc">
+                        <span><i class="fa-solid fa-location-dot"></i> Casa della Gente & Piazza IV Novembre</span>
+                        <span><i class="fa-regular fa-clock"></i> Dalle ore 14:00 in poi</span>
+                    </div>
+
+                    <div class="menu-list-box">
+                        <h4><i class="fa-solid fa-fire-flame-curved"></i> Gusto & Merenda Autunnale</h4>
+                        <ul>
+                            <li class="menu-pill">Caldarroste</li>
+                            <li class="menu-pill">Frittelle di Mele</li>
+                            <li class="menu-pill">Pane e Strinù</li>
+                            <li class="menu-pill">Bevande fresche & Bar</li>
+                        </ul>
+                    </div>
+
+                    <div class="day-extra-info">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span><strong>Ore 15:00 in Piazza IV Novembre:</strong> Grande spettacolo ed animazione per i più piccoli e le loro famiglie! Beverage curato da <strong>Bar X</strong>.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 50 YEARS HERITAGE BOX -->
+            <div class="history-box">
+                <div class="history-number">50+ ANNI</div>
+                <h3>Una Tradizione Storica per Monasterolo</h3>
+                <p>
+                    La Sagra delle Caldarroste è uno degli eventi storici simbolo del nostro borgo, nato proprio con la fondazione della Proloco di Monasterolo del Castello. Da oltre mezzo secolo unisce generazioni di cittadini e visitatori per celebrare i profumi dell'autunno, la buona cucina bergamasca ed la gioia di stare insieme.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIALTIES SECTION -->
+    <section class="specialties-section">
+        <div class="container">
+            <div class="section-autumn-header">
+                <h2>I Prodotti Tipici della Sagra</h2>
+                <p>I sapori autentici dell'autunno preparati con passione dai nostri volontari</p>
+            </div>
+
+            <div class="spec-grid">
+                <div class="spec-card">
+                    <div class="spec-icon"><i class="fa-solid fa-fire"></i></div>
+                    <h3>Le Caldarroste</h3>
+                    <p>Castagne selezionate arrostite sul fuoco vivo secondo l'antica tecnica per un gusto inconfondibile.</p>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon"><i class="fa-solid fa-apple-whole"></i></div>
+                    <h3>Frittelle di Mele</h3>
+                    <p>Fragrate, calde e spolverate di zucchero: il dolce autunnale amato da grandi e piccini.</p>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon"><i class="fa-solid fa-bowl-food"></i></div>
+                    <h3>Polenta Cunsada & Trippa</h3>
+                    <p>I veri piatti forti della tradizione bergamasca conditi con gorgonzola o ricco ragù di carne.</p>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon"><i class="fa-solid fa-burger"></i></div>
+                    <h3>Pane e Strinù</h3>
+                    <p>Il piatto tipico della tradizione Bergamasca</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="tutti-eventi.html" class="btn btn-secondary" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">
+                    <i class="fa-solid fa-arrow-left"></i> Torna a Tutti gli Eventi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contatti">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Proloco Monasterolo del Castello</h3>
+                <p>Custodi delle tradizioni e della cultura del nostro borgo sul Lago di Endine.</p>
+            </div>
+            <div class="footer-social">
+                <p>Rimani aggiornato:</p>
+                <a href="https://whatsapp.com/channel/0029VaisvW07DAX7TVEEa43T" target="_blank" class="social-link wa-link">
+                    <i class="fa-brands fa-whatsapp"></i> Iscriviti al Canale WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Proloco Monasterolo del Castello. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

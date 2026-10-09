@@ -1,5 +1,50 @@
 [
     {
+        "id": "sagra-caldarroste",
+        "title": "Sagra delle Caldarroste e dei Prodotti Tipici",
+        "short_desc": "Oltre 50 anni di storia! Sabato 24 e Domenica 25 Ottobre con Flavio DJ, caldarroste fumanti, frittelle di mele, polenta cunsada, trippa e animazione bimbi.",
+        "full_desc": "Oltre 50 anni di tradizione con la Proloco di Monasterolo del Castello!\n\nPROGRAMMA:\n\nSABATO 24 OTTOBRE (dalle 18:00 alle 23:00 in Piazza IV Novembre):\n- DJ set dal vivo con Flavio DJ\n- Menù: Pane e strinù, polenta cunsada (zola/ragù), trippa con verdure, caldarroste, frittelle di mele\n- In collaborazione con Bar La Dama Bianca e Bar X\n\nDOMENICA 25 OTTOBRE (dalle 14:00 alla Casa della Gente):\n- Caldarroste, frittelle di mele, pane e strinù\n- Ore 15:00 in Piazza IV Novembre: Spettacolo ed animazione per bambini e famiglie\n- Beverage by Bar X",
+        "date": "Sabato 24 e Domenica 25 Ottobre 2026",
+        "time": "Sabato dalle 18:00 | Domenica dalle 14:00",
+        "location": "Piazza IV Novembre e Casa della Gente, Monasterolo del Castello",
+        "price": "Ingresso libero (consumazioni a pagamento)",
+        "website": "",
+        "image": "assets/img/Caldarroste.jpg",
+        "gallery": [
+            "assets/img/Caldarroste.jpg",
+            "assets/img/Monasterolo.jpg"
+        ],
+        "booking_link": "",
+        "featured": true,
+        "past": false,
+        "associations": ["Proloco"],
+        "custom_link": "sagra-caldarroste.html"
+    },
+    {
+        "id": "visita-castello-autunno",
+        "title": "Visita al Castello e giardino in autunno",
+        "short_desc": "Una visita guidata per scoprire la storia del Castello e ammirare il suo giardino nel suggestivo scenario autunnale.",
+        "full_desc": "Una visita guidata per scoprire la storia del Castello e ammirare il suo giardino nel suggestivo scenario autunnale.\n\nData: Domenica 11 Ottobre 2026\nInizio visita: ore 10:30 (Ritrovo all'ingresso del Castello 15 minuti prima, ore 10:15)\n\nPrenotazione obbligatoria solo via WhatsApp al 388 9762514.\n\nPrezzi:\n- Adulti: 4€\n- Bambini: 3€\n- Gratuito per bambini sotto i 10 anni",
+        "date": "Domenica 11 Ottobre 2026",
+        "time": "Inizio visita ore 10:30 (Ritrovo 15 min prima)",
+        "location": "Castello di Monasterolo, Piazzetta Contessa V. Terni de Gregori, 1",
+        "price": "Adulti 4€ | Bambini 3€ | Gratuito < 10 anni",
+        "website": "",
+        "image": "assets/img/Castello_alto.webp",
+        "gallery": [
+            "assets/img/Castello_alto.webp",
+            "assets/img/Stanza.jpg",
+            "assets/img/PiscinaCastello.jpeg",
+            "assets/img/Castello.jpeg"
+        ],
+        "booking_link": "https://wa.me/393889762514",
+        "booking_label": "Prenota su WhatsApp: 388 9762514",
+        "featured": true,
+        "past": false,
+        "associations": ["Proloco"],
+        "custom_link": "visite-castello.html"
+    },
+    {
         "id": "visita-guidata-castello",
         "title": "Visita al Castello",
         "short_desc": "Visita guidata al Castello di Monasterolo. Prenotazione obbligatoria via WhatsApp al 388 9762514.",
@@ -9,14 +54,18 @@
         "location": "Castello di Monasterolo, Piazzetta Contessa V. Terni de Gregori, 1",
         "price": "Adulti 4€ | Bambini 3€ | Gratuito < 10 anni",
         "website": "",
-        "image": "assets/img/Castello.jpeg",
+        "image": "assets/img/Castello_alto.webp",
         "gallery": [
+            "assets/img/Castello_alto.webp",
+            "assets/img/Stanza.jpg",
+            "assets/img/PiscinaCastello.jpeg",
             "assets/img/Castello.jpeg"
         ],
         "booking_link": "https://wa.me/393889762514",
-        "featured": true,
-        "past": false,
-        "associations": ["Proloco"]
+        "featured": false,
+        "past": true,
+        "associations": ["Proloco"],
+        "custom_link": "visite-castello.html"
     },
     {
         "id": "sagra-del-castoncello",
@@ -34,8 +83,8 @@
         ],
         "booking_link": "tel:+393470172753",
         "booking_label": "Chiama Maria: 347 017 2753",
-        "featured": true,
-        "past": false,
+        "featured": false,
+        "past": true,
         "associations": ["Proloco", "Gruppo Castoncello", "GVM"],
         "custom_link": "sagra-del-castoncello.html"
     },
@@ -54,8 +103,8 @@
             "assets/img/Mercatino.jpg"
         ],
         "booking_link": "",
-        "featured": true,
-        "past": false,
+        "featured": false,
+        "past": true,
         "associations": ["Proloco"]
     },
     {
@@ -69,9 +118,10 @@
         "price": "Ingresso libero, consumazioni a pagamento",
         "image": "assets/img/Cannoni.jpg",
         "booking_link": "",
-        "featured": true,
-        "past": false,
-        "associations": ["GVM"]
+        "featured": false,
+        "past": true,
+        "associations": ["GVM"],
+        "custom_link": "piazza-dance.html"
     },
     {
         "id": "cena-perfetta",
